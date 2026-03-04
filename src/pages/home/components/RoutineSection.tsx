@@ -1,11 +1,4 @@
-import React from "react";
-
-const imgRectangle91 =
-  "http://localhost:3845/mcp/0961530aa528dcd3f810f291ab3928efdb05679a.png";
-const imgRectangle92 =
-  "http://localhost:3845/mcp/cc4a41c6b17fb15ea57fa81d357a134fb65db86b.png";
-const imgRectangle93 =
-  "http://localhost:3845/mcp/c52faa9c7d00e7dd09c98d63e3c53d4a4c1cccc9.png";
+import type { JSX } from "react";
 
 interface RoutineCardProps {
   imageSrc: string;
@@ -25,7 +18,7 @@ function RoutineCard({ imageSrc, title, description, borderClass }: RoutineCardP
             className="w-full h-full object-cover"
           />
         </div>
-        <h3 className="font-urbanist font-bold text-[#00215e] text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight mb-4">
+        <h3 className="font-urbanist text-left font-bold text-[#00215e] text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight mb-4">
           {title}
         </h3>
         <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight whitespace-pre-wrap">
@@ -37,30 +30,33 @@ function RoutineCard({ imageSrc, title, description, borderClass }: RoutineCardP
   );
 }
 
-export default function RoutineSection() {
+export default function RoutineSection(): JSX.Element {
   return (
-    <section className="w-full py-16 md:py-24 bg-[#f8f8ff] px-4 sm:px-6 lg:px-8">
-      <div className="max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center lg:items-center">
+    <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      
+      {/* Decorative Yellow Circle (Bottom Right) */}
+      <div className="absolute -bottom-30 right-0 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#ffe028] pointer-events-none z-0"></div>
+
+      {/* Main Content Container (z-10 ensures it stays above the circle) */}
+      <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center lg:items-center">
+        
         {/* Left Cards */}
         <div className="flex-[0.65] w-full relative pt-6 md:pt-10">
-          {/* Top orange line decorator */}
-          <div className="hidden lg:block absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-1.5 bg-[#ffaa28] rounded-full"></div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <RoutineCard
-              imageSrc="/Ellipse 99.png"
+              imageSrc=""
               title="Self Learning"
               description="Kami menyediakan akses ke kelas online dari camp ternama untuk belajar mandiri."
               borderClass="bg-[#00215e]"
             />
             <RoutineCard
-              imageSrc={imgRectangle92}
+              imageSrc=""
               title="Project Base"
               description={`Kami mengutamakan belajar lewat proyek nyata yang bisa langsung dipraktikkan.`}
               borderClass="bg-[#ffaa28]"
             />
             <RoutineCard
-              imageSrc={imgRectangle93}
+              imageSrc=""
               title="Collaborative"
               description="Kami membangun kemitraan dengan berbagai pihak untuk membuka lebih banyak peluang."
               borderClass="bg-[#ffe028]"
@@ -73,6 +69,8 @@ export default function RoutineSection() {
           <h2 className="font-urbanist font-bold text-[#00215e] text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6 md:mb-8">
             CThree Routine
           </h2>
+          <div className="w-32 h-1.5 bg-[#ffaa28] rounded-full mb-6 md:mb-8"></div>
+
           {/* Top orange line decorator for mobile/tablet */}
           <div className="block lg:hidden w-32 h-1.5 bg-[#ffaa28] rounded-full mb-6 md:mb-8"></div>
           <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight max-w-2xl lg:max-w-none">

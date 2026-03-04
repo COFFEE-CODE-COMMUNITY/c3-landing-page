@@ -1,8 +1,5 @@
 import React from 'react';
 
-const imgEllipse98 = "http://localhost:3845/assets/965a87765fe33f5c05ccc106ffca415455ed2858.svg";
-const imgEllipse99 = "http://localhost:3845/assets/ba6fc4ce49a63ef75241da05e86ed000fe164613.svg";
-
 function CollabCard() {
   return (
     <div className="flex flex-col sm:flex-row w-full rounded-[25px] overflow-hidden shadow-lg bg-[#00215e]">
@@ -23,12 +20,8 @@ function CollabCard() {
       {/* Image & Decorative */}
       <div className="flex-1 sm:w-1/2 relative bg-[#001a4b] min-h-[250px] sm:min-h-0 overflow-hidden flex items-end justify-center rounded-bl-[50px] sm:rounded-bl-none sm:rounded-tr-[50px]">
         {/* Decorative ellipses */}
-        <div className="absolute right-0 top-0 w-32 h-32 md:w-48 md:h-48 opacity-75 transform translate-x-1/4 -translate-y-1/4 pointer-events-none">
-          <img src={imgEllipse98} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="absolute right-0 top-0 w-20 h-20 md:w-32 md:h-32 transform translate-x-1/2 translate-y-1/4 pointer-events-none">
-          <img src={imgEllipse99} alt="" className="w-full h-full object-cover" />
-        </div>
+        <div className="absolute right-0 top-0 w-32 h-32 md:w-48 md:h-48 rounded-full bg-[#1e44a0] opacity-75 transform translate-x-1/4 -translate-y-1/4 pointer-events-none z-0" />
+        <div className="absolute right-0 top-0 w-20 h-20 md:w-32 md:h-32 rounded-full bg-[#255abc] transform translate-x-1/2 translate-y-1/4 pointer-events-none z-0" />
 
         {/* Person image */}
         <div className="relative w-2/3 max-w-[250px] sm:max-w-full sm:w-5/6 h-auto flex flex-col justify-end z-10 bottom-0 pt-6">
@@ -45,8 +38,11 @@ function CollabCard() {
 
 export default function CollaborationSection() {
   return (
-    <section className="w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#f8f8ff]">
-      <div className="max-w-screen-xl mx-auto flex flex-col items-center">
+    <section className="relative w-full -mt-20 z-10 py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      {/* Decorative yellow circle — bridges into the section below */}
+      {/* <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#ffaa28] pointer-events-none z-0" /> */}
+
+      <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col items-center">
         <h2 className="font-urbanist font-bold text-[#00215e] text-4xl md:text-5xl lg:text-6xl tracking-tight mb-10 text-center">
           Collaboration With
         </h2>
