@@ -16,13 +16,13 @@ export default function Navbar(): JSX.Element {
         {/* Navigation Links */}
         <nav className="flex items-center gap-6 md:gap-12">
           <a
-            href="#home"
+            href="/"
             className="font-urbanist font-medium text-[#00215e] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors"
           >
             Home
           </a>
           <a
-            href="#about"
+            href="/about"
             className="font-urbanist font-light text-[#858585] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors"
           >
             About
