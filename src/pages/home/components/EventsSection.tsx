@@ -1,12 +1,5 @@
 import type { JSX } from "react";
 
-const imgRectangle91 =
-  "http://localhost:3845/assets/0961530aa528dcd3f810f291ab3928efdb05679a.png";
-const imgRectangle92 =
-  "http://localhost:3845/assets/cc4a41c6b17fb15ea57fa81d357a134fb65db86b.png";
-const imgRectangle93 =
-  "http://localhost:3845/assets/c52faa9c7d00e7dd09c98d63e3c53d4a4c1cccc9.png";
-
 interface EventCardProps {
   imageSrc: string;
   title: string;
@@ -68,19 +61,19 @@ export default function EventsSection(): JSX.Element {
         {/* Right Cards */}
         <div className="flex-[0.65] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <EventCard
-            imageSrc={imgRectangle91}
+            imageSrc=""
             title="Workshop"
             description="Workshop adalah kegiatan komunitas kami untuk belajar bareng secara praktikal."
             borderClass="bg-[#00215e]"
           />
           <EventCard
-            imageSrc={imgRectangle92}
+            imageSrc=""
             title="Engangement Day"
             description="Workshop adalah kegiatan rutin komunitas kami untuk belajar bareng secara praktikal."
             borderClass="bg-[#ffaa28]"
           />
           <EventCard
-            imageSrc={imgRectangle93}
+            imageSrc=""
             title="Showcase Day"
             description="Showcase Day adalah momen untuk kami menunjukkan sejauh mana perkembangan proyek yang sedang dikerjakan."
             borderClass="bg-[#ffe028]"
