@@ -4,23 +4,11 @@ export default function HeroSection(): JSX.Element {
   return (
     <section
       id="home"
-      className="relative w-full h-screen overflow-hidden pt-32 pb-16 lg:pt-48 lg:pb-24"
+      className="relative w-full h-screen pt-32 pb-16 lg:pt-48 lg:pb-24"
     >
       {/* Decorative Ellipses */}
-      <div className="absolute left-[-20vw] top-10 w-[40vw] max-w-[500px] aspect-square pointer-events-none">
-        <img
-          src="/Ellipse 103.png"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="absolute right-[-20vw] top-100 w-[40vw] max-w-[500px] aspect-square pointer-events-none">
-        <img
-          src="/Ellipse 101.png"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <div className="absolute left-[-20vw] top-10 w-[40vw] max-w-[500px] aspect-square rounded-full bg-[#00215e] pointer-events-none z-0" />
+      <div className="absolute right-[-20vw] top-100 w-[40vw] max-w-[500px] aspect-square rounded-full bg-[#ffaa28] pointer-events-none z-0" />
 
       {/* Main Content */}
       <div className="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">

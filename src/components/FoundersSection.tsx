@@ -1,13 +1,6 @@
 import type { JSX } from "react";
 import { useRef, useState } from "react";
 
-const imgEllipse103 = "http://localhost:3845/assets/58266a59c19b8b90557ff45a3facc0e8f6b59a9a.svg";
-const imgEllipse104 = "http://localhost:3845/assets/6219f908adc633726ac4d5181a7014748d7a0620.svg";
-const imgEllipse7 = "http://localhost:3845/assets/975e69ba23c01c645641158dfa1e14738986a29d.png";
-const imgEllipse8 = "http://localhost:3845/assets/44cbd0cf4d89b8d5bf9b0657b5aa564d8acb4129.png";
-const imgEllipse105 = "http://localhost:3845/assets/da575ce4ebe34e6303f34bdc7914b99ee879459e.svg";
-
-
 interface FounderCardProps {
   imageSrc: string;
   name: string;
@@ -81,13 +74,14 @@ function FounderCard({
 
 export default function FoundersSection(): JSX.Element {
   return (
-    <section className="relative w-full py-16 md:py-24 bg-[#f8f8ff] overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full py-16 md:py-24 bg-[#f8f8ff] px-4 sm:px-6 lg:px-8">
+      
+      {/* NEW: Lingkaran Oranye Kiri Bawah (Overlap ke section bawahnya) */}
+
       <div className="max-w-screen-xl mx-auto relative flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
 
         {/* Decorative Left Elements - Hidden on smaller screens */}
-        <div className="hidden lg:block absolute left-[-15%] top-0 w-64 h-64 z-0 pointer-events-none">
-          <img src="Ellipse 102.png" alt="" className="w-full h-full object-cover" />
-        </div>
+        <div className="hidden lg:block absolute left-[-15%] top-0 w-64 h-64 rounded-full bg-[#FFE028] pointer-events-none z-1" />
 
         {/* Left Side: Text Content */}
         <div className="flex-1 relative z-10 w-full flex flex-col items-center lg:items-start text-center lg:text-left gap-8">
@@ -96,7 +90,7 @@ export default function FoundersSection(): JSX.Element {
           </h2>
 
           <div className="bg-[#ececec] rounded-[25px] p-8 md:p-10 relative flex flex-col w-full shadow-sm">
-            <div className="absolute top-0 left-8 md:left-10 w-24 h-1.5 bg-[#ffaa28] rounded-full transform -translate-y-1/2"></div>
+            <div className="absolute top-0 left-8 md:left-10 w-24 h-1.5 bg-[#FFAA28] rounded-full transform -translate-y-1/2"></div>
 
             <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight mb-8">
               Lorem ipsum dolor sit amet consectetur. Ipsum quis eu mattis odio nulla mi sed. Quis massa quis in cras nisl viverra nunc ultrices. Ac ullamcorper malesuada integer feugiat malesuada. Cursus elit in nisi sagittis vivamus hendrerit consectetur ante pellentesque. Sed est mauris mauris phasellus.
@@ -126,9 +120,7 @@ export default function FoundersSection(): JSX.Element {
         </div>
 
         {/* Right Decor */}
-        <div className="hidden lg:block absolute right-[-20%] bottom-0 w-[400px] h-[400px] z-0 pointer-events-none">
-          <img src="Ellipse 98.png" alt="" className="w-full h-full object-cover" />
-        </div>
+        <div className="hidden lg:block absolute right-[-20%] bottom-0 w-[400px] h-[400px] rounded-full bg-[#00215e] pointer-events-none z-0" />
 
       </div>
     </section>

@@ -11,7 +11,7 @@ import type { JSX } from "react";
 
 function App(): JSX.Element {
   return (
-    <div className="min-h-screen bg-[#f8f8ff] text-[#00215e] font-urbanist w-full overflow-x-hidden pt-24">
+    <div className="min-h-screen bg-[#f8f8ff] text-[#00215e] font-urbanist w-full overflow-x-hidden relative pt-24">
       <Navbar />
       <HeroSection />
       <CollaborationSection />

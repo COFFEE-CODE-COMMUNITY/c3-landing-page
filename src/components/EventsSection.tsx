@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 
 const imgRectangle91 =
   "http://localhost:3845/assets/0961530aa528dcd3f810f291ab3928efdb05679a.png";
@@ -24,7 +25,7 @@ function EventCard({ imageSrc, title, description, borderClass }: EventCardProps
             className="w-full h-full object-cover"
           />
         </div>
-        <h3 className="font-urbanist font-bold text-[#00215e] text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight mb-4">
+        <h3 className="font-urbanist font-bold text-[#00215e] text-2xl md:text-3xl lg:text-4xl text-left leading-tight tracking-tight mb-4">
           {title}
         </h3>
         <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight">
@@ -36,10 +37,16 @@ function EventCard({ imageSrc, title, description, borderClass }: EventCardProps
   );
 }
 
-export default function EventsSection() {
+export default function EventsSection(): JSX.Element {
   return (
-    <section className="w-full py-16 md:py-24 bg-[#f8f8ff] px-4 sm:px-6 lg:px-8">
-      <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-center">
+    <section className="relative w-full py-16 md:py-24 bg-[#f8f8ff] px-4 sm:px-6 lg:px-8">
+      
+      {/* Decorative Orange Circle (Bottom Left, overlapping to RoutineSection) */}
+      <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#ffaa28] pointer-events-none z-0"></div>
+
+      {/* Main Content Container (z-10 ensures it stays above the circle) */}
+      <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-center">
+        
         {/* Left Text */}
         <div className="flex flex-col lg:flex-[0.35] w-full text-center lg:text-left items-center lg:items-start">
           <h2 className="font-urbanist font-bold text-[#00215e] text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6 md:mb-8">
