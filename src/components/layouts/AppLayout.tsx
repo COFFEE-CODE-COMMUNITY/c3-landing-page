@@ -7,7 +7,7 @@ const AppLayout = (): JSX.Element => {
   return (
     <div className="h-svh">
       <Navbar />
-      <div className="pt-24">
+      <div className="pt-24 overflow-hidden">
         <Outlet />
       </div>
       <Footer />

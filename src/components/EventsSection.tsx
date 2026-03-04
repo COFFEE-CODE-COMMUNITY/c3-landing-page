@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 
 const imgRectangle91 =
   "http://localhost:3845/assets/0961530aa528dcd3f810f291ab3928efdb05679a.png";
@@ -13,7 +14,12 @@ interface EventCardProps {
   borderClass: string;
 }
 
-function EventCard({ imageSrc, title, description, borderClass }: EventCardProps): JSX.Element {
+function EventCard({
+  imageSrc,
+  title,
+  description,
+  borderClass,
+}: EventCardProps): JSX.Element {
   return (
     <div className="flex flex-col bg-white shadow-md rounded-[25px] overflow-hidden h-full">
       <div className="p-4 sm:p-6 lg:p-8 flex-1 flex flex-col items-center text-center">
