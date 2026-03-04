@@ -5,6 +5,7 @@
 
 @theme {
   --font-urbanist: "Urbanist", sans-serif;
+  --color-primary: #00215e;
 }
 
 @layer utilities {
