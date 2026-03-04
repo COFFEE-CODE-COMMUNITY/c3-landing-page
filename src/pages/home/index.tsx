@@ -7,11 +7,11 @@ import RoutineSection from "./components/RoutineSection";
 
 const AboutPage = (): JSX.Element => {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="-mt-24 bg-[#F8F8FF]">
       <HeroSection />
       <CollaborationSection />
-      <EventsSection />
       <FoundersSection />
+      <EventsSection />
       <RoutineSection />
     </div>
   );

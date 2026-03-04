@@ -4,7 +4,7 @@ import { SiVimeo } from 'react-icons/si';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#00215e] w-full mt-20 pt-16 pb-12 overflow-hidden px-4 sm:px-6 lg:px-8 text-[#f8f8ff]">
+    <footer className="relative bg-[#00215e] w-full pt-16 pb-12 overflow-hidden px-4 sm:px-6 lg:px-8 text-[#f8f8ff]">
       
       {/* Background Decorative Ellipse (CSS Only) */}
       <div className="absolute top-1/2 left-0 -translate-x-[40%] -translate-y-1/2 w-[400px] h-[400px] lg:w-[800px] lg:h-[800px] rounded-full bg-[#001A4B] pointer-events-none z-0"></div>
