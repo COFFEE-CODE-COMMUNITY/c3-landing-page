@@ -62,10 +62,10 @@ function FounderCard({
       <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 flex-shrink-0 bg-gray-200/50">
         <img src={imageSrc} alt={name} className="w-full h-full object-cover" />
       </div>
-      <p className="font-urbanist font-bold text-[#00215e] text-xl md:text-2xl tracking-tight text-center mb-1">
+      <p className="font-urbanist font-bold text-primary text-h5 md:text-h4 tracking-tight text-center mb-1">
         {name}
       </p>
-      <p className="font-urbanist font-semibold text-[#858585] text-lg tracking-tight text-center">
+      <p className="font-urbanist font-semibold text-[#858585] text-h5 tracking-tight text-center">
         {role1}
       </p>
     </div>
@@ -81,23 +81,23 @@ export default function FoundersSection(): JSX.Element {
       <div className="max-w-screen-xl mx-auto relative flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
 
         {/* Decorative Left Elements - Hidden on smaller screens */}
-        <div className="hidden lg:block absolute left-[-15%] top-0 w-64 h-64 rounded-full bg-[#FFE028] pointer-events-none z-1" />
+        <div className="hidden lg:block absolute left-[-15%] top-0 w-64 h-64 rounded-full bg-yellow pointer-events-none z-1" />
 
         {/* Left Side: Text Content */}
         <div className="flex-1 relative z-10 w-full flex flex-col items-center lg:items-start text-center lg:text-left gap-8">
-          <h2 className="font-urbanist font-bold text-[#00215e] text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
+          <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight leading-tight">
             Meet Our Community Founder
           </h2>
 
           <div className="bg-[#ececec] rounded-[25px] p-8 md:p-10 relative flex flex-col w-full shadow-sm">
-            <div className="absolute top-0 left-8 md:left-10 w-24 h-1.5 bg-[#FFAA28] rounded-full transform -translate-y-1/2"></div>
+            <div className="absolute top-0 left-8 md:left-10 w-24 h-1.5 bg-orange rounded-full transform -translate-y-1/2"></div>
 
-            <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight mb-8">
+            <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight mb-8">
               Lorem ipsum dolor sit amet consectetur. Ipsum quis eu mattis odio nulla mi sed. Quis massa quis in cras nisl viverra nunc ultrices. Ac ullamcorper malesuada integer feugiat malesuada. Cursus elit in nisi sagittis vivamus hendrerit consectetur ante pellentesque. Sed est mauris mauris phasellus.
             </p>
 
             <div className="self-center lg:self-start">
-              <button className="bg-[#00215e] text-[#f8f8ff] font-urbanist font-bold text-lg md:text-xl px-8 py-3 rounded-full hover:bg-[#001a4b] transition-colors shadow-md">
+              <button className="bg-primary text-[#f8f8ff] font-urbanist font-bold text-h5 md:text-h5 px-8 py-3 rounded-full hover:bg-[#001a4b] transition-colors shadow-md">
                 Read More
               </button>
             </div>
@@ -120,7 +120,7 @@ export default function FoundersSection(): JSX.Element {
         </div>
 
         {/* Right Decor */}
-        <div className="hidden lg:block absolute right-[-20%] bottom-0 w-[400px] h-[400px] rounded-full bg-[#00215e] pointer-events-none z-0" />
+        <div className="hidden lg:block absolute right-[-20%] bottom-0 w-[400px] h-[400px] rounded-full bg-primary pointer-events-none z-0" />
 
       </div>
     </section>

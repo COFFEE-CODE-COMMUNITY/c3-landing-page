@@ -18,10 +18,10 @@ function RoutineCard({ imageSrc, title, description, borderClass }: RoutineCardP
             className="w-full h-full object-cover"
           />
         </div>
-        <h3 className="font-urbanist text-left font-bold text-[#00215e] text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight mb-4">
+        <h3 className="font-urbanist text-left font-bold text-primary text-h4 md:text-h3 lg:text-h3 leading-tight tracking-tight mb-4">
           {title}
         </h3>
-        <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight whitespace-pre-wrap">
+        <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight whitespace-pre-wrap">
           {description}
         </p>
       </div>
@@ -35,7 +35,7 @@ export default function RoutineSection(): JSX.Element {
     <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       
       {/* Decorative Yellow Circle (Bottom Right) */}
-      <div className="absolute -bottom-30 right-0 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#ffe028] pointer-events-none z-0"></div>
+      <div className="absolute -bottom-30 right-0 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow pointer-events-none z-0"></div>
 
       {/* Main Content Container (z-10 ensures it stays above the circle) */}
       <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center lg:items-center">
@@ -47,33 +47,33 @@ export default function RoutineSection(): JSX.Element {
               imageSrc=""
               title="Self Learning"
               description="Kami menyediakan akses ke kelas online dari camp ternama untuk belajar mandiri."
-              borderClass="bg-[#00215e]"
+              borderClass="bg-primary"
             />
             <RoutineCard
               imageSrc=""
               title="Project Base"
               description={`Kami mengutamakan belajar lewat proyek nyata yang bisa langsung dipraktikkan.`}
-              borderClass="bg-[#ffaa28]"
+              borderClass="bg-orange"
             />
             <RoutineCard
               imageSrc=""
               title="Collaborative"
               description="Kami membangun kemitraan dengan berbagai pihak untuk membuka lebih banyak peluang."
-              borderClass="bg-[#ffe028]"
+              borderClass="bg-yellow"
             />
           </div>
         </div>
 
         {/* Right Text */}
         <div className="flex flex-col lg:flex-[0.35] w-full text-center lg:text-left items-center lg:items-start">
-          <h2 className="font-urbanist font-bold text-[#00215e] text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6 md:mb-8">
+          <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight mb-6 md:mb-8">
             CThree Routine
           </h2>
-          <div className="w-32 h-1.5 bg-[#ffaa28] rounded-full mb-6 md:mb-8"></div>
+          <div className="w-32 h-1.5 bg-orange rounded-full mb-6 md:mb-8"></div>
 
           {/* Top orange line decorator for mobile/tablet */}
-          <div className="block lg:hidden w-32 h-1.5 bg-[#ffaa28] rounded-full mb-6 md:mb-8"></div>
-          <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight max-w-2xl lg:max-w-none">
+          <div className="block lg:hidden w-32 h-1.5 bg-orange rounded-full mb-6 md:mb-8"></div>
+          <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight max-w-2xl lg:max-w-none">
             Lorem ipsum dolor sit amet consectetur. Tincidunt consectetur in sit
             elementum elit sed. In egestas mauris eget leo ut amet. Non odio in
             purus laoreet sit ut. Habitasse lacus vitae sed mauris.

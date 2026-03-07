@@ -23,10 +23,10 @@ function EventCard({
             className="w-full h-full object-cover"
           />
         </div>
-        <h3 className="font-urbanist font-bold text-[#00215e] text-2xl md:text-3xl lg:text-4xl text-left leading-tight tracking-tight mb-4">
+        <h3 className="font-urbanist font-bold text-primary text-h4 md:text-h3 lg:text-h3 text-left leading-tight tracking-tight mb-4">
           {title}
         </h3>
-        <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight">
+        <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight">
           {description}
         </p>
       </div>
@@ -40,18 +40,18 @@ export default function EventsSection(): JSX.Element {
     <section className="relative w-full py-16 md:py-24 bg-[#f8f8ff] px-4 sm:px-6 lg:px-8">
       
       {/* Decorative Orange Circle (Bottom Left, overlapping to RoutineSection) */}
-      <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#ffaa28] pointer-events-none z-0"></div>
+      <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] rounded-full bg-orange pointer-events-none z-0"></div>
 
       {/* Main Content Container (z-10 ensures it stays above the circle) */}
       <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-center">
         
         {/* Left Text */}
         <div className="flex flex-col lg:flex-[0.35] w-full text-center lg:text-left items-center lg:items-start">
-          <h2 className="font-urbanist font-bold text-[#00215e] text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6 md:mb-8">
+          <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight mb-6 md:mb-8">
             CThree Event
           </h2>
-          <div className="w-32 h-1.5 bg-[#ffaa28] rounded-full mb-6 md:mb-8"></div>
-          <p className="font-urbanist font-normal text-[#858585] text-base md:text-lg leading-relaxed tracking-tight max-w-2xl lg:max-w-none">
+          <div className="w-32 h-1.5 bg-orange rounded-full mb-6 md:mb-8"></div>
+          <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight max-w-2xl lg:max-w-none">
             Lorem ipsum dolor sit amet consectetur. Tincidunt consectetur in sit
             elementum elit sed. In egestas mauris eget leo ut amet. Non odio in
             purus laoreet sit ut. Habitasse lacus vitae sed mauris.
@@ -64,19 +64,19 @@ export default function EventsSection(): JSX.Element {
             imageSrc=""
             title="Workshop"
             description="Workshop adalah kegiatan komunitas kami untuk belajar bareng secara praktikal."
-            borderClass="bg-[#00215e]"
+            borderClass="bg-primary"
           />
           <EventCard
             imageSrc=""
             title="Engangement Day"
             description="Workshop adalah kegiatan rutin komunitas kami untuk belajar bareng secara praktikal."
-            borderClass="bg-[#ffaa28]"
+            borderClass="bg-orange"
           />
           <EventCard
             imageSrc=""
             title="Showcase Day"
             description="Showcase Day adalah momen untuk kami menunjukkan sejauh mana perkembangan proyek yang sedang dikerjakan."
-            borderClass="bg-[#ffe028]"
+            borderClass="bg-yellow"
           />
         </div>
       </div>
