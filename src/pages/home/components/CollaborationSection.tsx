@@ -2,17 +2,17 @@ import React from 'react';
 
 function CollabCard() {
   return (
-    <div className="flex flex-col sm:flex-row w-full rounded-[25px] overflow-hidden shadow-lg bg-[#00215e]">
+    <div className="flex flex-col sm:flex-row w-full rounded-[25px] overflow-hidden shadow-lg bg-primary">
 
       {/* Text Content */}
       <div className="flex-1 p-6 md:p-8 flex flex-col justify-center z-10 w-full sm:w-1/2">
-        <p className="font-urbanist font-bold text-[#ffe028] text-xl md:text-2xl tracking-tight">
+        <p className="font-urbanist font-bold text-yellow text-h5 md:text-h4 tracking-tight">
           BrandonKun
         </p>
-        <p className="font-urbanist font-semibold text-[#255abc] text-lg md:text-xl tracking-tight mt-1">
+        <p className="font-urbanist font-semibold text-primary text-h6 md:text-h5 tracking-tight mt-1">
           Work at Fisallia Pharmacy
         </p>
-        <p className="font-urbanist font-normal text-white text-base tracking-tight mt-4 leading-relaxed">
+        <p className="font-urbanist font-normal text-white text-h6 tracking-tight mt-4 leading-relaxed">
           Lorem ipsum dolor sit amet consectetur. In nulla phasellus eu in tincidunt pharetra risus. Nam turpis pretium dolor laoreet egestas urna est.
         </p>
       </div>
@@ -40,10 +40,10 @@ export default function CollaborationSection() {
   return (
     <section className="relative w-full -mt-20 z-10 py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       {/* Decorative yellow circle — bridges into the section below */}
-      {/* <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#ffaa28] pointer-events-none z-0" /> */}
+      {/* <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] rounded-full bg-orange pointer-events-none z-0" /> */}
 
       <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col items-center">
-        <h2 className="font-urbanist font-bold text-[#00215e] text-4xl md:text-5xl lg:text-6xl tracking-tight mb-10 text-center">
+        <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight mb-10 text-center">
           Collaboration With
         </h2>
 
