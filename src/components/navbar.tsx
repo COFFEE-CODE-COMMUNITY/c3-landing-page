@@ -28,7 +28,7 @@ export default function Navbar(): JSX.Element {
             About
           </a>
           <a
-            href="#portfolio"
+            href="/portofolio"
             className="font-urbanist font-light text-[#858585] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors"
           >
             Portofolio
