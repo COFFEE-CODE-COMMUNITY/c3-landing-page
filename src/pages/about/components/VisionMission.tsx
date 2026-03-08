@@ -3,7 +3,7 @@ import { useState, type JSX } from "react";
 const VisionMission = (): JSX.Element => {
   const [vission, setVission] = useState(true);
   return (
-    <div className="h-[85vh] relative px-35 py-20">
+    <div className="h-[85vh] relative px-90 py-20">
       <div className="bg-yellow w-45 h-45 rounded-full absolute top-0 -left-25"></div>
 
       <div className="flex h-full">

@@ -6,9 +6,10 @@
 @theme {
   --font-urbanist: "Urbanist", sans-serif;
   --color-primary: #00215e;
+  --color-dark-primary: #001a4b;
   --color-yellow: #ffe028;
   --color-orange: #ffaa28;
-
+  --color-blue: #255abb;
   --text-h1: 64px;
   --text-h2: 48px;
   --text-h3: 32px;
