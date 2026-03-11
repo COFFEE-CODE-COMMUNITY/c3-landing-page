@@ -9,7 +9,7 @@ interface ResearchDetailProps {
 const ResearchDetail = ({ tittle, desc, photo }: ResearchDetailProps) => {
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-amber-200 z-100 flex items-center justify-center">
-      <div className="bg-white w-300 h-110 relative flex px-15 py-7 gap-20 rounded-xl overflow-hidden">
+      <div className="bg-white w-300 h-110 relative flex px-15 py-7 gap-20 rounded-xl overflow-hidden overflow-auto">
         <div className="bg-primary absolute left-0 top-0 h-full w-10 rounded-r-2xl"></div>
         <div className="bg-primary absolute right-0 top-0 h-full w-10 rounded-l-2xl"></div>
 

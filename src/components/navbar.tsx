@@ -1,6 +1,8 @@
 import type { JSX } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar(): JSX.Element {
+  const location = useLocation()
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none pt-4 px-4 sm:px-6 lg:px-8">
       <div className="bg-white/10 backdrop-blur-2xl backdrop-saturate-150 border border-white/40 w-full max-w-screen-xl mx-auto rounded-[50px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] flex items-center justify-between px-6 py-3 md:px-10 pointer-events-auto">
@@ -15,24 +17,24 @@ export default function Navbar(): JSX.Element {
 
         {/* Navigation Links */}
         <nav className="flex items-center gap-6 md:gap-12">
-          <a
-            href="/"
-            className="font-urbanist font-medium text-[#00215e] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors"
+          <Link
+            to="/"
+            className={`${location.pathname.includes("/") ? "font-medium" : "font-light"} font-urbanist  text-[#00215e] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors`}
           >
             Home
-          </a>
-          <a
-            href="/about"
-            className="font-urbanist font-light text-[#858585] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors"
+          </Link>
+          <Link
+            to="/about"
+            className={`${location.pathname.includes("/about") ? "font-medium" : "font-light"} font-urbanist text-[#858585] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors`}
           >
             About
-          </a>
-          <a
-            href="/portofolio"
-            className="font-urbanist font-light text-[#858585] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors"
+          </Link>
+          <Link
+            to="/portofolio"
+            className={`${location.pathname.includes("/portofolio") ? "font-medium" : "font-light"} font-urbanist text-[#858585] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors`}
           >
             Portofolio
-          </a>
+          </Link>
         </nav>
       </div>
     </div>
