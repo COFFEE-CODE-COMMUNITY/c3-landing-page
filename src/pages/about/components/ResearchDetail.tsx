@@ -14,7 +14,7 @@ const ResearchDetail = ({ tittle, desc, photo }: ResearchDetailProps) => {
         <div className="bg-primary absolute right-0 top-0 h-full w-10 rounded-l-2xl"></div>
 
         <div className="flex-1 pl-10 flex-col">
-          <button className="bg-primary p-1 rounded-full aspect-square w-8 h-8 text-xl flex justify-center items-center text-white">
+          <button className="bg-primary p-1 rounded-full aspect-square w-8 h-8 text-xl flex justify-center items-center text-white cursor-pointer">
             X
           </button>
           <h2 className="text-h2 font-semibold text-primary">{tittle}</h2>

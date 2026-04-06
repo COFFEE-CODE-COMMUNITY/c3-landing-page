@@ -23,14 +23,13 @@ const Researchs = () => {
             Technology Research
           </h2>
           <p className="font-light text-h5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-            illum repellendus odit praesentium aliquid laborum fugit sapiente
-            suscipit, culpa officiis! Non, quod impedit expedita vel id aliquid?
-            Delectus, molestiae quisquam?
+            Mendedikasikan kreativitas dan keahlian teknis dalam meriset serta
+            mengembangkan perangkat lunak cerdas, mulai dari mekanik permainan
+            hingga arsitektur sistem yang skalabel.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 z-10 relative">
+        <div className="flex justify-center gap-5 z-10 relative">
           {RESEARCHS_LIST.map((research) => (
             <ResearchCard
               desc={research.description}
