@@ -20,10 +20,7 @@ export default function HeroSection(): JSX.Element {
           Konsisten, dan Berdaya Saing!
         </h2>
         <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 lg:text-h4 tracking-tight max-w-4xl leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur. Est tortor ullamcorper
-          pellentesque cras aliquam dolor in. Lorem laoreet pulvinar a pharetra
-          non. Ultricies felis justo eleifend id in phasellus duis quam
-          habitasse.
+          Mulai perjalananmu di dunia teknologi bersama komunitas yang suportif. Di sini, kamu bisa belajar, berbagi, dan berkembang tanpa tekanan—karena konsistensi kecil hari ini adalah kunci kesuksesan besar di masa depan.
         </p>
       </div>
     </section>

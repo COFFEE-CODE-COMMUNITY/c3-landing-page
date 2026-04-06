@@ -1,4 +1,7 @@
 import type { JSX } from "react";
+import collaborative from "../../../assets/routine/collaborative.webp";
+import project from "../../../assets/routine/project-base.webp";
+import selfpace from "../../../assets/routine/self-pace.webp";
 
 interface RoutineCardProps {
   imageSrc: string;
@@ -44,19 +47,19 @@ export default function RoutineSection(): JSX.Element {
         <div className="flex-[0.65] w-full relative pt-6 md:pt-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <RoutineCard
-              imageSrc=""
+              imageSrc={selfpace}
               title="Self Learning"
               description="Kami menyediakan akses ke kelas online dari camp ternama untuk belajar mandiri."
               borderClass="bg-primary"
             />
             <RoutineCard
-              imageSrc=""
+              imageSrc={project}
               title="Project Base"
               description={`Kami mengutamakan belajar lewat proyek nyata yang bisa langsung dipraktikkan.`}
               borderClass="bg-orange"
             />
             <RoutineCard
-              imageSrc=""
+              imageSrc={collaborative}
               title="Collaborative"
               description="Kami membangun kemitraan dengan berbagai pihak untuk membuka lebih banyak peluang."
               borderClass="bg-yellow"
@@ -74,9 +77,7 @@ export default function RoutineSection(): JSX.Element {
           {/* Top orange line decorator for mobile/tablet */}
           <div className="block lg:hidden w-32 h-1.5 bg-orange rounded-full mb-6 md:mb-8"></div>
           <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight max-w-2xl lg:max-w-none">
-            Lorem ipsum dolor sit amet consectetur. Tincidunt consectetur in sit
-            elementum elit sed. In egestas mauris eget leo ut amet. Non odio in
-            purus laoreet sit ut. Habitasse lacus vitae sed mauris.
+            Kami memiliki kebiasaan belajar yang konsisten, terarah, dan berkelanjutan. Dengan pendekatan yang menggabungkan pembelajaran mandiri, praktik berbasis proyek, serta kolaborasi aktif, kami membantu peserta mengembangkan keterampilan nyata yang siap diterapkan di dunia kerja. Setiap proses difokuskan pada peningkatan kompetensi secara bertahap dan terukur.
           </p>
         </div>
       </div>

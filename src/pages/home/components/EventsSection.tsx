@@ -1,4 +1,7 @@
 import type { JSX } from "react";
+import workshop from "../../../assets/event/workshop.webp";
+import engagement from "../../../assets/event/engagement.webp";
+import showcase from "../../../assets/event/showcase.webp";
 
 interface EventCardProps {
   imageSrc: string;
@@ -52,28 +55,26 @@ export default function EventsSection(): JSX.Element {
           </h2>
           <div className="w-32 h-1.5 bg-orange rounded-full mb-6 md:mb-8"></div>
           <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight max-w-2xl lg:max-w-none">
-            Lorem ipsum dolor sit amet consectetur. Tincidunt consectetur in sit
-            elementum elit sed. In egestas mauris eget leo ut amet. Non odio in
-            purus laoreet sit ut. Habitasse lacus vitae sed mauris.
+            Kami menghadirkan berbagai kegiatan yang dirancang untuk mendukung proses belajar dan pengembangan skill di bidang teknologi. Setiap event memberikan pengalaman baru melalui praktik langsung, kolaborasi, dan eksplorasi ide.
           </p>
         </div>
 
         {/* Right Cards */}
         <div className="flex-[0.65] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <EventCard
-            imageSrc=""
+            imageSrc={workshop}
             title="Workshop"
             description="Workshop adalah kegiatan komunitas kami untuk belajar bareng secara praktikal."
             borderClass="bg-primary"
           />
           <EventCard
-            imageSrc=""
+            imageSrc={engagement}
             title="Engangement Day"
             description="Workshop adalah kegiatan rutin komunitas kami untuk belajar bareng secara praktikal."
             borderClass="bg-orange"
           />
           <EventCard
-            imageSrc=""
+            imageSrc={showcase}
             title="Showcase Day"
             description="Showcase Day adalah momen untuk kami menunjukkan sejauh mana perkembangan proyek yang sedang dikerjakan."
             borderClass="bg-yellow"

@@ -85,15 +85,18 @@ export default function FoundersSection(): JSX.Element {
 
         {/* Left Side: Text Content */}
         <div className="flex-1 relative z-10 w-full flex flex-col items-center lg:items-start text-center lg:text-left gap-8">
-          <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight leading-tight">
-            Meet Our Community Founder
-          </h2>
+          
+          {/* Wrapper khusus untuk h2 + garis oranye */}
+          <div className="flex flex-col items-center lg:items-start gap-3">
+            <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight leading-tight">
+              Meet Our Community Founder
+            </h2>
+            <div className="w-32 h-1.5 bg-orange rounded-full"></div>
+          </div>
 
           <div className="bg-[#ececec] rounded-[25px] p-8 md:p-10 relative flex flex-col w-full shadow-sm">
-            <div className="absolute top-0 left-8 md:left-10 w-24 h-1.5 bg-orange rounded-full transform -translate-y-1/2"></div>
-
             <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight mb-8">
-              Lorem ipsum dolor sit amet consectetur. Ipsum quis eu mattis odio nulla mi sed. Quis massa quis in cras nisl viverra nunc ultrices. Ac ullamcorper malesuada integer feugiat malesuada. Cursus elit in nisi sagittis vivamus hendrerit consectetur ante pellentesque. Sed est mauris mauris phasellus.
+              Berawal dari semangat berbagi dan belajar bersama, komunitas ini hadir untuk membantu siapa saja berkembang di dunia teknologi. Founder kami percaya bahwa setiap orang memiliki potensi untuk sukses dengan dukungan dan lingkungan yang tepat.
             </p>
 
             <div className="self-center lg:self-start">
