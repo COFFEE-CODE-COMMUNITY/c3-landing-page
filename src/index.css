@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@theme {
+  --font-urbanist: "Urbanist", sans-serif;
+  --color-primary: #00215e;
+  --color-dark-primary: #001a4b;
+  --color-yellow: #ffe028;
+  --color-orange: #ffaa28;
+  --color-blue: #255abb;
+  --text-h1: 64px;
+  --text-h2: 48px;
+  --text-h3: 32px;
+  --text-h4: 24px;
+  --text-h5: 20px;
+  --text-h6: 16px;
+  --text-h7: 14px;
+}
+
+@layer utilities {
+  .custom-text {
+    @apply font-urbanist;
+  }
+}
