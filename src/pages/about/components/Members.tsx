@@ -3,10 +3,10 @@ import { GROUPS, TEAM_MEMBERS } from "../../../utils/data";
 import MemberCard from "./MemberCard";
 
 const Members = () => {
-  const [group, setGroup] = useState("FRONTEND");
-  const team = TEAM_MEMBERS.find((groups) => groups.role === group);
+  const [groupName, setGroupName] = useState("Game Development");
+  const team = TEAM_MEMBERS.find((groups) => groups.role === groupName);
   return (
-    <div className="h-auto min-h-[85vh] lg:h-[85vh] overflow-hidden lg:overflow-visible flex flex-col relative px-5 lg:px-60 py-10 lg:py-0 items-center gap-10">
+    <div className="overflow-hidden lg:overflow-visible flex flex-col relative px-5 lg:px-60 py-10 lg:py-0 items-center gap-10">
       <div className="bg-primary w-20 h-20 lg:w-45 lg:h-45 rounded-full absolute top-0 -left-10 lg:-left-25 hidden lg:block"></div>
       <div className="bg-primary w-20 h-20 lg:w-45 lg:h-45 rounded-full absolute top-0 -right-10 lg:-right-25 hidden lg:block"></div>
 
@@ -25,7 +25,12 @@ const Members = () => {
         <div className="px-5 lg:px-20 overflow-x-auto w-full max-w-[90vw] lg:max-w-none pb-4 lg:pb-0">
           <ul className="flex gap-6 w-max mx-auto">
             {GROUPS.map((group) => (
-              <li className="text-h6 lg:text-h5 whitespace-nowrap">{group}</li>
+              <li
+                className={`text-h6 lg:text-h5 whitespace-nowrap cursor-pointer ${groupName == group ? "text-primary font-semibold" : "font-light"}`}
+                onClick={() => setGroupName(group)}
+              >
+                {group}
+              </li>
             ))}
           </ul>
         </div>

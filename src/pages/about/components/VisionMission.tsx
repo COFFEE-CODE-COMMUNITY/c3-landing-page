@@ -24,14 +24,37 @@ const VisionMission = (): JSX.Element => {
           </ul>
         </div>
         <div className="flex-1 flex flex-col gap-3 px-5 lg:px-20 text-center lg:text-left items-center lg:items-start">
-          <h3 className="text-h3 text-primary font-semibold">CThree Vision</h3>
-          <p className="text-h6">
-            Coffee Code Community is an independent technology non-profit
-            community focused on continuous learning, interdisciplinary
-            collaboration, and healthy competition to shape innovators who are
-            ready to compete and collaborate with professionals and companies in
-            the tech industry.
-          </p>
+          {vission ? (
+            <h3 className="text-h3 text-primary font-semibold">
+              CThree Vision
+            </h3>
+          ) : (
+            <h3 className="text-h3 text-primary font-semibold">
+              CThree Mission
+            </h3>
+          )}
+          {vission ? (
+            <p className="text-h6">
+              Menjadi ekosistem kolaboratif yang melahirkan inovator teknologi
+              unggul, adaptif, dan siap memimpin transformasi digital di
+              industri global."
+            </p>
+          ) : (
+            <p className="text-h6">
+              1. Continuous Learning: Menyelenggarakan ruang belajar yang
+              berkelanjutan untuk mendalami teknologi terbaru guna memperkecil
+              celah antara kurikulum akademis dan kebutuhan industri.
+              2.Interdisciplinary Collaboration: Membangun budaya kolaborasi
+              antar berbagai disiplin ilmu untuk menciptakan solusi teknologi
+              yang inklusif dan inovatif. 3. Healthy Competition: Mendorong
+              semangat kompetisi yang sehat melalui proyek nyata dan perlombaan
+              guna mengasah ketajaman teknis dan mentalitas profesional. 4.
+              Professional Readiness: Mempersiapkan setiap anggota dengan hard
+              skill dan soft skill yang relevan agar mampu bersaing serta
+              berkolaborasi langsung dengan para profesional dan perusahaan
+              teknologi.
+            </p>
+          )}
         </div>
       </div>
 

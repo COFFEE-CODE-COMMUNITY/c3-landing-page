@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { HIGHLIGHT } from "../../../utils/data";
 
 const Highlight = () => {
+  const [number, setNumber] = useState(0);
+  const PHOTO = HIGHLIGHT;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNumber((prevIndex) =>
+        prevIndex === PHOTO.length - 1 ? 0 : prevIndex + 1,
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+  console.log(PHOTO);
   return (
     <div className="h-auto min-h-[50vh] lg:h-[50vh] flex justify-center items-center relative py-10 lg:py-0">
       <div className="w-20 h-20 lg:w-60 lg:h-60 bg-orange rounded-full absolute bottom-0 -left-10 lg:-left-30"></div>
@@ -21,7 +35,14 @@ const Highlight = () => {
         </div>
         <div className="w-full lg:w-200 bg-primary p-4 lg:p-8 relative h-60 lg:h-auto">
           <div className="w-10 h-10 lg:w-20 lg:h-20 bg-orange rounded-full absolute -top-5 lg:-top-10 -right-5 lg:-right-10"></div>
-          <div className="bg-gray-400 h-full w-full rounded-xl lg:rounded-none"></div>
+          <div
+            className="bg-gray-400 h-full w-full rounded-xl lg:rounded-none"
+            style={{
+              backgroundImage: `url(${PHOTO[number].photourl})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
         </div>
       </div>
     </div>
