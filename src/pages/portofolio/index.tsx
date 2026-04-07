@@ -11,11 +11,6 @@ const imgRectangle95 = "http://localhost:3845/assets/40ba6e7cd70c4106790000e32af
 const projects = {
     productInternal: [
         {
-            title: "Cakra Belajar",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
-        },
-        {
             title: "Coming Soon",
             description: "",
             imageSrc: "",
@@ -27,13 +22,34 @@ const projects = {
             title: "Cakra Belajar",
             description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
             imageSrc: imgRectangle95,
+        },
+        {
+            title: "Panggilaja",
+            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
+            imageSrc: imgRectangle95,
+        },
+        {
+            title: "Healthy",
+            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
+            imageSrc: imgRectangle95,
+        },
+        {
+            title: "Finansaku",
+            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
+            imageSrc: imgRectangle95,
+        },
+        {
+            title: "Salingtau",
+            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
+            imageSrc: imgRectangle95,
         }
     ],
     external: [
         {
-            title: "Cakra Belajar",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
+            title: "Coming Soon",
+            description: "",
+            imageSrc: "",
+            comingSoon: true,
         }
     ]
 };
