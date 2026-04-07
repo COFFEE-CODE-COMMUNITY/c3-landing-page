@@ -3,14 +3,13 @@ import { type JSX } from "react";
 const HeroSection = (): JSX.Element => {
   return (
     <div className="flex flex-col lg:flex-row min-h-[85vh] lg:h-[85vh] justify-between pb-10 lg:pb-0">
-      <div className="w-full lg:w-1/2 bg-primary lg:rounded-r-full rounded-b-3xl lg:rounded-b-none text-white flex items-center justify-center lg:justify-start p-6 lg:p-10 mb-10 lg:mb-0">
+      <div className="w-full lg:w-3/6 bg-primary lg:rounded-r-full rounded-b-3xl lg:rounded-b-none text-white flex items-center justify-center lg:justify-start p-6 lg:p-18 mb-10 lg:mb-0">
         <div className="flex flex-col gap-6 xxl:gap-10 text-center lg:text-left items-center lg:items-start">
-          <h1 className="text-h2 xxl:text-h1">Coffe Code Community</h1>
+          <h1 className="text-h2 xxl:text-h1 pr-20">Coffe Code Community</h1>
           <p className="text-h6 text-wrap w-full lg:w-80 font-light px-4 lg:px-0">
-            Lorem ipsum dolor sit amet consectetur. Lectus at in arcu dapibus
-            ornare quis ante. Morbi nam nulla ornare tempus. Diam porttitor quam
-            non pretium tristique. Commodo quisque integer laoreet nam feugiat
-            est posuere.
+            Tempat terbaik untuk mulai dan berkembang di dunia teknologi.
+            Belajar bareng, bangun proyek nyata, dan tingkatkan skill secara
+            konsisten.
           </p>
         </div>
       </div>

@@ -9,13 +9,13 @@ interface ResearchCardProps {
 
 const ResearchCard = ({ image, tittle, desc, onClick }: ResearchCardProps) => {
   return (
-    <div className="border-2 border-black rounded-2xl p-2 flex flex-col relative overflow-hidden">
+    <div className="border-2 border-black rounded-2xl p-2 flex flex-col relative overflow-hidden w-70">
       <img src={image} alt="" className="w-full h-30" />
       <h4 className="text-h4 text-primary font-semibold">{tittle}</h4>
       <p className="text-h6 font-light">{desc}</p>
       <div className="flex justify-end">
         <button
-          className="text-white bg-primary rounded-2xl px-3 py-1 text-h6"
+          className="text-white bg-primary rounded-2xl px-3 py-1 text-h6 cursor-pointer"
           onClick={onClick}
         >
           Learn More
