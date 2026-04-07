@@ -1,5 +1,7 @@
 import type { JSX } from "react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useSlideInLeft, useSlideInRight, useParallax } from "../../../utils/animations";
+import { gsap } from "gsap";
 
 interface FounderCardProps {
   imageSrc: string;
@@ -73,6 +75,24 @@ function FounderCard({
 }
 
 export default function FoundersSection(): JSX.Element {
+  const textContentRef = useSlideInLeft(0.8, 100);
+  const cardsContentRef = useSlideInRight(0.8, 100);
+  const leftCircleRef = useParallax(0.2);
+  const rightCircleRef = useParallax(0.25);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!buttonRef.current) return;
+
+    gsap.to(buttonRef.current, {
+      scale: 1.03,
+      duration: 2.5,
+      ease: 'power1.inOut',
+      repeat: -1,
+      yoyo: true,
+    });
+  }, []);
+
   return (
     <section className="relative w-full py-16 md:py-24 bg-[#f8f8ff] px-4 sm:px-6 lg:px-8">
       
@@ -81,10 +101,16 @@ export default function FoundersSection(): JSX.Element {
       <div className="max-w-screen-xl mx-auto relative flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
 
         {/* Decorative Left Elements - Hidden on smaller screens */}
-        <div className="hidden lg:block absolute left-[-15%] top-0 w-64 h-64 rounded-full bg-yellow pointer-events-none z-1" />
+        <div 
+          ref={leftCircleRef}
+          className="hidden lg:block absolute left-[-15%] top-0 w-64 h-64 rounded-full bg-yellow pointer-events-none z-1" 
+        />
 
         {/* Left Side: Text Content */}
-        <div className="flex-1 relative z-10 w-full flex flex-col items-center lg:items-start text-center lg:text-left gap-8">
+        <div 
+          ref={textContentRef}
+          className="flex-1 relative z-10 w-full flex flex-col items-center lg:items-start text-center lg:text-left gap-8"
+        >
           
           {/* Wrapper khusus untuk h2 + garis oranye */}
           <div className="flex flex-col items-center lg:items-start gap-3">
@@ -100,7 +126,10 @@ export default function FoundersSection(): JSX.Element {
             </p>
 
             <div className="self-center lg:self-start">
-              <button className="bg-primary text-[#f8f8ff] font-urbanist font-bold text-h5 md:text-h5 px-8 py-3 rounded-full hover:bg-[#001a4b] transition-colors shadow-md">
+              <button 
+                ref={buttonRef}
+                className="bg-primary text-[#f8f8ff] font-urbanist font-bold text-h5 md:text-h5 px-8 py-3 rounded-full hover:bg-[#001a4b] transition-colors shadow-md"
+              >
                 Read More
               </button>
             </div>
@@ -108,7 +137,10 @@ export default function FoundersSection(): JSX.Element {
         </div>
 
         {/* Right Side: Founder Cards */}
-        <div className="flex-1 relative z-10 w-full flex flex-col sm:flex-row gap-6 justify-center lg:justify-end">
+        <div 
+          ref={cardsContentRef}
+          className="flex-1 relative z-10 w-full flex flex-col sm:flex-row gap-6 justify-center lg:justify-end"
+        >
           <FounderCard
             imageSrc="profile1.png"
             name="Rafi Asshiddiqie T."
@@ -123,7 +155,10 @@ export default function FoundersSection(): JSX.Element {
         </div>
 
         {/* Right Decor */}
-        <div className="hidden lg:block absolute right-[-20%] bottom-0 w-[400px] h-[400px] rounded-full bg-primary pointer-events-none z-0" />
+        <div 
+          ref={rightCircleRef}
+          className="hidden lg:block absolute right-[-20%] bottom-0 w-[400px] h-[400px] rounded-full bg-primary pointer-events-none z-0" 
+        />
 
       </div>
     </section>

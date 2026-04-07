@@ -3,10 +3,8 @@ import { HeroSection } from './components/HeroSection';
 import { CallToAction } from './components/CallToAction';
 import { ProjectSection } from './components/ProjectSection';
 import { ProjectCard } from './components/ProjectCard';
-import Navbar from '../../components/navbar';
-import Footer from '../../components/Footer';
 
-const imgRectangle95 = "http://localhost:3845/assets/40ba6e7cd70c4106790000e32af040a54d40d29b.png";
+const imgRectangle95 = "belum ada anjr";
 
 const projects = {
     productInternal: [

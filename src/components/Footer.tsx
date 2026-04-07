@@ -1,10 +1,16 @@
-import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { SiVimeo } from 'react-icons/si';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { useScrollFadeInUp, useStaggerChildren } from '../utils/animations';
 
 export default function Footer() {
+  const footerRef = useScrollFadeInUp(0.8, 60);
+  const socialRef = useStaggerChildren(0.1, 0.6, 30);
+  const linksRef = useStaggerChildren(0.1, 0.6, 30);
+
   return (
-    <footer className="relative bg-[#00215e] w-full pt-16 pb-12 overflow-hidden px-4 sm:px-6 lg:px-8 text-[#f8f8ff]">
+    <footer 
+      ref={footerRef}
+      className="relative bg-[#00215e] w-full pt-16 pb-12 overflow-hidden px-4 sm:px-6 lg:px-8 text-[#f8f8ff]"
+    >
       
       {/* Background Decorative Ellipse (CSS Only) */}
       <div className="absolute top-1/2 left-0 -translate-x-[40%] -translate-y-1/2 w-[400px] h-[400px] lg:w-[800px] lg:h-[800px] rounded-full bg-[#001A4B] pointer-events-none z-0"></div>
@@ -31,14 +37,20 @@ export default function Footer() {
             </div>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-6 text-xl relative z-20">
+            <div 
+              ref={socialRef}
+              className="flex items-center gap-6 text-xl relative z-20"
+            >
               <a href="#" className="hover:text-c3-yellow transition-colors"><FaInstagram /></a>
               <a href="#" className="hover:text-c3-yellow transition-colors"><FaLinkedin /></a>
             </div>
           </div>
 
           {/* Links Section */}
-          <div className="flex flex-wrap md:flex-nowrap gap-12 lg:gap-32 text-base relative z-20">
+          <div 
+            ref={linksRef}
+            className="flex flex-wrap md:flex-nowrap gap-12 lg:gap-32 text-base relative z-20"
+          >
             
             {/* Product Links */}
             <div className="flex flex-col gap-4">

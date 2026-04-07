@@ -1,7 +1,10 @@
 import type { JSX } from "react";
+import { useEffect, useRef } from "react";
 import collaborative from "../../../assets/routine/collaborative.webp";
 import project from "../../../assets/routine/project-base.webp";
 import selfpace from "../../../assets/routine/self-pace.webp";
+import { useSlideInLeft, useStaggerChildren, useParallax } from "../../../utils/animations";
+import { gsap } from "gsap";
 
 interface RoutineCardProps {
   imageSrc: string;
@@ -11,6 +14,28 @@ interface RoutineCardProps {
 }
 
 function RoutineCard({ imageSrc, title, description, borderClass }: RoutineCardProps): JSX.Element {
+  const borderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!borderRef.current) return;
+
+    gsap.fromTo(
+      borderRef.current,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        transformOrigin: 'left',
+        scrollTrigger: {
+          trigger: borderRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
+
   return (
     <div className="flex flex-col bg-white shadow-md rounded-[25px] overflow-hidden h-full">
       <div className="p-4 sm:p-6 lg:p-8 flex-1 flex flex-col items-center text-center">
@@ -28,24 +53,37 @@ function RoutineCard({ imageSrc, title, description, borderClass }: RoutineCardP
           {description}
         </p>
       </div>
-      <div className={`w-full h-1.5 ${borderClass}`}></div>
+      <div 
+        ref={borderRef}
+        className={`w-full h-1.5 ${borderClass}`}
+      ></div>
     </div>
   );
 }
 
 export default function RoutineSection(): JSX.Element {
+  const textContentRef = useSlideInLeft(0.8, 100);
+  const cardsRef = useStaggerChildren(0.15, 0.8, 60);
+  const yellowCircleRef = useParallax(0.25);
+
   return (
     <section className="relative w-full py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       
       {/* Decorative Yellow Circle (Bottom Right) */}
-      <div className="absolute -bottom-30 right-0 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow pointer-events-none z-0"></div>
+      <div 
+        ref={yellowCircleRef}
+        className="absolute -bottom-30 right-0 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] rounded-full bg-yellow pointer-events-none z-0"
+      ></div>
 
       {/* Main Content Container (z-10 ensures it stays above the circle) */}
       <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row gap-12 lg:gap-16 items-center lg:items-center">
         
         {/* Left Cards */}
         <div className="flex-[0.65] w-full relative pt-6 md:pt-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div 
+            ref={cardsRef}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
             <RoutineCard
               imageSrc={selfpace}
               title="Self Learning"
@@ -68,7 +106,10 @@ export default function RoutineSection(): JSX.Element {
         </div>
 
         {/* Right Text */}
-        <div className="flex flex-col lg:flex-[0.35] w-full text-center lg:text-left items-center lg:items-start">
+        <div 
+          ref={textContentRef}
+          className="flex flex-col lg:flex-[0.35] w-full text-center lg:text-left items-center lg:items-start"
+        >
           <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight mb-6 md:mb-8">
             CThree Routine
           </h2>
