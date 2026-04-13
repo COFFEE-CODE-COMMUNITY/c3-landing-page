@@ -59,7 +59,7 @@ const PortofolioPage = () => {
                 <HeroSection />
 
                 <div className="relative z-20">
-                    <CallToAction />
+                    {/* <CallToAction /> */}
                 </div>
 
                 <div className="w-full pt-16 pb-24 md:pb-40 mt-12 bg-white/30 backdrop-blur-sm">

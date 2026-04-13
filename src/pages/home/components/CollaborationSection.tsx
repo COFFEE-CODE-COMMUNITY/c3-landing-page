@@ -90,8 +90,8 @@ export default function CollaborationSection() {
         >
           <CollabCard />
           <CollabCard />
-          <CollabCard />
-          <CollabCard />
+          {/* <CollabCard />
+          <CollabCard /> */}
         </div>
       </div>
     </section>
