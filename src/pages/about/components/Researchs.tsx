@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { RESEARCHS_LIST } from "../../../utils/data";
 import ResearchCard from "./ResearchCard";
-import ResearchDetail from "./ResearchDetail";
+import { useScrollFadeInUp, useStaggerChildren, useFloating, useParallax } from "../../../utils/animations";
+import { gsap } from "gsap";
 
 interface ResearchDetail {
   desc: string;
@@ -11,65 +12,116 @@ interface ResearchDetail {
 
 const Researchs = () => {
   const [research, setResearch] = useState<ResearchDetail | null>(null);
-  console.log(research);
+
+  const titleRef = useScrollFadeInUp(0.8, 50);
+  const cardsRef = useStaggerChildren(0.15, 0.8, 60);
+
+  const circleLeft = useFloating(5, 25);
+  const circleRight = useFloating(4, 20);
+
+  // Modal animation
+  const modalRef = useRef<HTMLDivElement>(null);
+  const modalContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (research && modalContentRef.current) {
+      gsap.fromTo(
+        modalContentRef.current,
+        { y: 60, opacity: 0, scale: 0.95 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }
+      );
+    }
+  }, [research]);
+
   return (
     <>
-      <div className="px-5 lg:px-30 h-auto min-h-[105vh] lg:h-[140vh] py-10 lg:py-0 relative flex flex-col gap-10 lg:gap-15 justify-center">
-        <div className="hidden lg:block bg-primary absolute w-10 left-0 top-30 bottom-0 h-auto rounded-r-2xl"></div>
-        <div className="hidden lg:block bg-primary absolute w-10 right-0 top-30 bottom-0 h-auto rounded-tl-2xl rounded-bl-2xl"></div>
+      <section className="relative w-full py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Decorative circles */}
+        <div ref={circleLeft} className="absolute -left-16 top-20 w-48 h-48 lg:w-72 lg:h-72 rounded-full bg-primary pointer-events-none" />
+        <div ref={circleRight} className="absolute -right-12 bottom-20 w-40 h-40 lg:w-60 lg:h-60 rounded-full bg-orange pointer-events-none" />
 
-        <div className="text-center lg:text-left z-10 relative">
-          <h2 className="text-h2 text-primary font-bold">
-            Technology Research
-          </h2>
-          <p className="font-light text-h5">
-            Mendedikasikan kreativitas dan keahlian teknis dalam meriset serta
-            mengembangkan perangkat lunak cerdas, mulai dari mekanik permainan
-            hingga arsitektur sistem yang skalabel.
-          </p>
+        <div className="max-w-screen-xl mx-auto relative z-10">
+          {/* Heading */}
+          <div ref={titleRef} className="text-center mb-16">
+            <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight">
+              Technology Research
+            </h2>
+            <div className="w-16 h-1.5 bg-gradient-to-r from-orange to-yellow rounded-full mx-auto mt-4 mb-6"></div>
+            <p className="font-urbanist font-normal text-[#666] text-h6 md:text-h5 max-w-2xl mx-auto leading-relaxed">
+              Mendedikasikan kreativitas dan keahlian teknis dalam meriset serta
+              mengembangkan perangkat lunak cerdas, mulai dari mekanik permainan
+              hingga arsitektur sistem yang skalabel.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {RESEARCHS_LIST.map((r, i) => (
+              <ResearchCard
+                key={i}
+                desc={r.description}
+                image={r.photourl}
+                tittle={r.name}
+                onClick={() =>
+                  setResearch({
+                    desc: r.description,
+                    image: r.photourl,
+                    tittle: r.name,
+                  })
+                }
+              />
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="flex justify-center gap-5 z-10 relative">
-          {RESEARCHS_LIST.map((research) => (
-            <ResearchCard
-              desc={research.description}
-              image={research.photourl}
-              tittle={research.name}
-              onClick={() =>
-                setResearch({
-                  desc: research.description,
-                  image: research.photourl,
-                  tittle: research.name,
-                })
-              }
-            />
-          ))}
-        </div>
-      </div>
-
+      {/* Modal */}
       {research && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 bg-black/40 z-100 flex items-center justify-center p-4">
-          <div className="bg-white w-full lg:w-300 h-auto lg:h-110 max-h-[90vh] relative flex flex-col-reverse lg:flex-row px-5 lg:px-15 py-7 gap-5 lg:gap-20 rounded-xl overflow-y-auto lg:overflow-hidden">
-            <div className="hidden lg:block bg-primary absolute left-0 top-0 h-full w-10 rounded-r-2xl"></div>
-            <div className="hidden lg:block bg-primary absolute right-0 top-0 h-full w-10 rounded-l-2xl"></div>
-
-            <div className="flex-1 lg:pl-10 flex flex-col gap-4">
-              <button
-                className="bg-primary p-1 rounded-full aspect-square w-8 h-8 text-xl flex justify-center items-center text-white self-end lg:self-start lg:absolute top-5 right-5 z-20"
-                onClick={() => setResearch(null)}
-              >
-                X
-              </button>
-              <h2 className="text-h2 font-semibold text-primary">
-                {research?.tittle}
-              </h2>
-              <p>{research?.desc}</p>
+        <div
+          ref={modalRef}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center p-4"
+          onClick={(e) => {
+            if (e.target === modalRef.current) setResearch(null);
+          }}
+        >
+          <div
+            ref={modalContentRef}
+            className="bg-white w-full max-w-4xl max-h-[90vh] relative flex flex-col lg:flex-row rounded-3xl overflow-hidden shadow-2xl"
+          >
+            {/* Image */}
+            <div className="lg:w-2/5 min-h-[200px] lg:min-h-0 relative">
+              <img
+                src={research.image}
+                alt={research.tittle}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/10" />
             </div>
 
-            <img
-              src={research?.image}
-              className="object-cover w-full lg:w-100 h-60 lg:h-auto rounded-2xl"
-            />
+            {/* Content */}
+            <div className="flex-1 p-8 lg:p-12 flex flex-col gap-4 overflow-y-auto">
+              <div className="flex items-start justify-between">
+                <div>
+                  <span className="font-urbanist font-semibold text-orange text-h7 uppercase tracking-widest">Research</span>
+                  <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 tracking-tight mt-1">
+                    {research.tittle}
+                  </h2>
+                </div>
+                <button
+                  className="flex-shrink-0 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 hover:text-primary transition-colors cursor-pointer"
+                  onClick={() => setResearch(null)}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+              <div className="w-12 h-1 bg-gradient-to-r from-orange to-yellow rounded-full"></div>
+              <p className="font-urbanist text-[#555] text-h6 leading-relaxed">
+                {research.desc}
+              </p>
+            </div>
           </div>
         </div>
       )}

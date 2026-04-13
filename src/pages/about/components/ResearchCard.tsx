@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
 
 interface ResearchCardProps {
   image: string;
@@ -8,22 +9,63 @@ interface ResearchCardProps {
 }
 
 const ResearchCard = ({ image, tittle, desc, onClick }: ResearchCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseEnter = () => {
+    if (cardRef.current) {
+      gsap.to(cardRef.current, {
+        y: -8,
+        duration: 0.35,
+        ease: "power2.out",
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (cardRef.current) {
+      gsap.to(cardRef.current, {
+        y: 0,
+        duration: 0.35,
+        ease: "power2.out",
+      });
+    }
+  };
+
   return (
-    <div className="border-2 border-black rounded-2xl p-2 flex flex-col relative overflow-hidden w-70">
-      <img src={image} alt="" className="w-full h-30" />
-      <h4 className="text-h4 text-primary font-semibold">{tittle}</h4>
-      <p className="text-h6 font-light">{desc}</p>
-      <div className="flex justify-end">
+    <div
+      ref={cardRef}
+      className="group bg-white/70 backdrop-blur-sm border border-white/50 rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_48px_rgba(0,33,94,0.1)] transition-shadow duration-300"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Image */}
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={image}
+          alt={tittle}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
+
+      {/* Content */}
+      <div className="p-6 flex flex-col gap-3">
+        <h4 className="font-urbanist font-bold text-primary text-h5 tracking-tight">
+          {tittle}
+        </h4>
+        <p className="font-urbanist text-[#666] text-h7 leading-relaxed line-clamp-3">
+          {desc}
+        </p>
         <button
-          className="text-white bg-primary rounded-2xl px-3 py-1 text-h6 cursor-pointer"
+          className="self-start mt-2 inline-flex items-center gap-2 bg-primary text-white font-urbanist font-semibold text-h7 px-5 py-2.5 rounded-full hover:bg-dark-primary transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md"
           onClick={onClick}
         >
           Learn More
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
         </button>
       </div>
-
-      <div className="w-10 h-10 rounded-full bg-orange absolute -bottom-5 left-3"></div>
-      <div className="w-12 h-12 rounded-full bg-yellow absolute -bottom-5 left-7"></div>
     </div>
   );
 };

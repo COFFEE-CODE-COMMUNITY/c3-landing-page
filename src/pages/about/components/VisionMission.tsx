@@ -1,65 +1,110 @@
 import { useState, type JSX } from "react";
+import { useScrollFadeInUp, useSlideInLeft, useSlideInRight, useFloating, useParallax } from "../../../utils/animations";
 
 const VisionMission = (): JSX.Element => {
-  const [vission, setVission] = useState(true);
+  const [activeTab, setActiveTab] = useState<"vision" | "mission">("vision");
+
+  const headingRef = useScrollFadeInUp(0.8, 50);
+  const leftRef = useSlideInLeft(0.8, 80);
+  const rightRef = useSlideInRight(0.8, 80);
+
+  const circleTopLeft = useFloating(4.5, 20);
+  const circleBottomRight = useFloating(3.8, 18);
+  const circleTopLeftParallax = useParallax(0.1);
+  const circleBottomRightParallax = useParallax(0.15);
+
+  const missions = [
+    { num: "01", title: "Continuous Learning", desc: "Menyelenggarakan ruang belajar berkelanjutan untuk mendalami teknologi terbaru." },
+    { num: "02", title: "Interdisciplinary Collaboration", desc: "Membangun budaya kolaborasi antar berbagai disiplin ilmu." },
+    { num: "03", title: "Healthy Competition", desc: "Mendorong semangat kompetisi yang sehat melalui proyek nyata." },
+    { num: "04", title: "Professional Readiness", desc: "Mempersiapkan anggota dengan hard skill dan soft skill relevan." },
+  ];
+
   return (
-    <div className="min-h-[85vh] lg:h-[85vh] relative px-5 lg:px-50 py-10 lg:py-20 flex flex-col justify-center">
-      <div className="bg-yellow w-20 h-20 lg:w-45 lg:h-45 rounded-full absolute top-0 -left-10 lg:-left-25"></div>
+    <section id="vision" className="relative w-full py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Decorative Circles */}
+      <div
+        ref={(el) => { if (el) { circleTopLeft.current = el; circleTopLeftParallax.current = el; } }}
+        className="absolute -left-20 top-10 w-40 h-40 lg:w-72 lg:h-72 rounded-full bg-yellow pointer-events-none"
+      />
+      <div
+        ref={(el) => { if (el) { circleBottomRight.current = el; circleBottomRightParallax.current = el; } }}
+        className="absolute -right-20 bottom-10 w-48 h-48 lg:w-80 lg:h-80 rounded-full bg-primary pointer-events-none"
+      />
 
-      <div className="flex flex-col lg:flex-row h-full gap-10 lg:gap-0 mt-10 lg:mt-0 relative z-10">
-        <div className="border-gray-600 border-b-2 lg:border-b-0 lg:border-r-1 pb-5 lg:pb-0 lg:pr-10 w-full lg:w-auto flex justify-center lg:justify-start">
-          <ul className="text-h4 space-y-0 lg:space-y-2 w-full lg:w-20 flex lg:flex-col justify-around lg:justify-start">
-            <li
-              className={`${vission ? "font-bold text-primary" : "font-light"} cursor-pointer`}
-              onClick={() => (vission ? null : setVission(true))}
-            >
-              Vision
-            </li>
-            <li
-              className={`${!vission ? "font-bold text-primary" : "font-light"} cursor-pointer`}
-              onClick={() => (vission ? setVission(false) : null)}
-            >
-              Mission
-            </li>
-          </ul>
+      <div className="max-w-screen-xl mx-auto relative z-10">
+        {/* Section heading */}
+        <div ref={headingRef} className="text-center mb-16">
+          <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight">
+            Vision & Mission
+          </h2>
+          <div className="w-16 h-1.5 bg-gradient-to-r from-orange to-yellow rounded-full mx-auto mt-4"></div>
         </div>
-        <div className="flex-1 flex flex-col gap-3 px-5 lg:px-20 text-center lg:text-left items-center lg:items-start">
-          {vission ? (
-            <h3 className="text-h3 text-primary font-semibold">
-              CThree Vision
-            </h3>
-          ) : (
-            <h3 className="text-h3 text-primary font-semibold">
-              CThree Mission
-            </h3>
-          )}
-          {vission ? (
-            <p className="text-h6">
-              Menjadi ekosistem kolaboratif yang melahirkan inovator teknologi
-              unggul, adaptif, dan siap memimpin transformasi digital di
-              industri global."
-            </p>
-          ) : (
-            <p className="text-h6">
-              1. Continuous Learning: Menyelenggarakan ruang belajar yang
-              berkelanjutan untuk mendalami teknologi terbaru guna memperkecil
-              celah antara kurikulum akademis dan kebutuhan industri.
-              2.Interdisciplinary Collaboration: Membangun budaya kolaborasi
-              antar berbagai disiplin ilmu untuk menciptakan solusi teknologi
-              yang inklusif dan inovatif. 3. Healthy Competition: Mendorong
-              semangat kompetisi yang sehat melalui proyek nyata dan perlombaan
-              guna mengasah ketajaman teknis dan mentalitas profesional. 4.
-              Professional Readiness: Mempersiapkan setiap anggota dengan hard
-              skill dan soft skill yang relevan agar mampu bersaing serta
-              berkolaborasi langsung dengan para profesional dan perusahaan
-              teknologi.
-            </p>
-          )}
+
+        {/* Tab buttons */}
+        <div className="flex justify-center gap-4 mb-14">
+          <button
+            onClick={() => setActiveTab("vision")}
+            className={`font-urbanist font-semibold text-h5 px-8 py-3 rounded-full transition-all duration-400 cursor-pointer ${activeTab === "vision"
+              ? "bg-primary text-white shadow-lg shadow-primary/20"
+              : "bg-white text-[#888] border border-gray-200 hover:border-primary/30 hover:text-primary"
+              }`}
+          >
+            Vision
+          </button>
+          <button
+            onClick={() => setActiveTab("mission")}
+            className={`font-urbanist font-semibold text-h5 px-8 py-3 rounded-full transition-all duration-400 cursor-pointer ${activeTab === "mission"
+              ? "bg-primary text-white shadow-lg shadow-primary/20"
+              : "bg-white text-[#888] border border-gray-200 hover:border-primary/30 hover:text-primary"
+              }`}
+          >
+            Mission
+          </button>
         </div>
+
+        {/* Content */}
+        {activeTab === "vision" ? (
+          <div ref={leftRef} className="max-w-4xl mx-auto">
+            <div className="bg-white/60 backdrop-blur-sm border border-white/50 rounded-3xl p-10 md:p-14 shadow-[0_8px_40px_rgba(0,0,0,0.04)] text-center">
+              <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mx-auto mb-8">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00215e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3 className="font-urbanist font-bold text-primary text-h3 md:text-h2 tracking-tight mb-6">
+                CThree Vision
+              </h3>
+              <p className="font-urbanist text-[#555] text-h5 md:text-h4 leading-relaxed max-w-2xl mx-auto">
+                "Menjadi ekosistem kolaboratif yang melahirkan inovator teknologi
+                unggul, adaptif, dan siap memimpin transformasi digital di
+                industri global."
+              </p>
+            </div>
+          </div>
+        ) : (
+          <div ref={rightRef} className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            {missions.map((item) => (
+              <div
+                key={item.num}
+                className="group bg-white/60 backdrop-blur-sm border border-white/50 rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_40px_rgba(0,33,94,0.08)] transition-all duration-300 hover:-translate-y-1"
+              >
+                <span className="font-urbanist font-bold text-orange text-h3 opacity-40 group-hover:opacity-100 transition-opacity duration-300">
+                  {item.num}
+                </span>
+                <h4 className="font-urbanist font-bold text-primary text-h5 mt-2 mb-3">
+                  {item.title}
+                </h4>
+                <p className="font-urbanist text-[#666] text-h6 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
-
-      <div className="bg-primary w-20 h-20 lg:w-45 lg:h-45 rounded-full absolute bottom-0 -right-10 lg:-right-25"></div>
-    </div>
+    </section>
   );
 };
 
