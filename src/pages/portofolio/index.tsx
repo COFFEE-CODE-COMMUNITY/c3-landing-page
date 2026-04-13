@@ -1,43 +1,47 @@
 import React from 'react';
 import { HeroSection } from './components/HeroSection';
-import { CallToAction } from './components/CallToAction';
+// import { CallToAction } from './components/CallToAction';
 import { ProjectSection } from './components/ProjectSection';
 import { ProjectCard } from './components/ProjectCard';
+import panggilaja from "../../assets/projects/panggilaja.png"
+import finansaku from "../../assets/projects/finansaku.png"
+import helthy from "../../assets/projects/heylth.png"
+import salingtau from "../../assets/projects/salingtau.png"
+
 
 const imgRectangle95 = "belum ada anjr";
 
 const projects = {
     productInternal: [
         {
-            title: "Coming Soon",
+            title: "Discord bot",
             description: "",
             imageSrc: "",
-            comingSoon: true,
         }
     ],
     internal: [
-        {
-            title: "Cakra Belajar",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
-        },
-        {
+                {
             title: "Panggilaja",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
+            description: "PanggilAja adalah solusi digital yang membuat keahlian Anda ditemukan, membangun reputasi, dan memberi Anda kendali penuh atas usaha Anda.",
+            imageSrc: panggilaja,
         },
         {
-            title: "Healthy",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
+            title: "Helthy",
+            description: "Pantau pola hidupmu dengan Heylth, aplikasi yang membantu kamu menjaga kesehatan, mencatat aktivitas harian, dan memberikan rekomendasi gaya hidup yang lebih baik.",
+            imageSrc: helthy,
         },
         {
             title: "Finansaku",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
+            description: "Kelola uangmu hidup lebih terencana Dengan finansaku, budgeting jadi cepat dan praktis. Atur uangmu agar setiap rupiah digunakan dengan bijak.",
+            imageSrc: finansaku,
         },
         {
             title: "Salingtau",
+            description: "Selamat datang di salingtau, ekosistem pembelajaran kolaboratif di mana setiap pertanyaan, jawaban, dan konten yang Anda bagikan akan dihargai.",
+            imageSrc: salingtau,
+        },
+        {
+            title: "Cakra Belajar",
             description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
             imageSrc: imgRectangle95,
         }

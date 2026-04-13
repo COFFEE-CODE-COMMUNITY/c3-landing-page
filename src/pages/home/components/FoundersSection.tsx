@@ -2,6 +2,8 @@ import type { JSX } from "react";
 import { useRef, useState, useEffect } from "react";
 import { useSlideInLeft, useSlideInRight, useParallax } from "../../../utils/animations";
 import { gsap } from "gsap";
+import rafiProfile from "../../../assets/founder/rafi.jpg"
+import aidoProfile from "../../../assets/founder/aido.png"
 
 interface FounderCardProps {
   imageSrc: string;
@@ -126,12 +128,12 @@ export default function FoundersSection(): JSX.Element {
             </p>
 
             <div className="self-center lg:self-start">
-              <button 
+              {/* <button 
                 ref={buttonRef}
                 className="bg-primary text-[#f8f8ff] font-urbanist font-bold text-h5 md:text-h5 px-8 py-3 rounded-full hover:bg-[#001a4b] transition-colors shadow-md"
               >
                 Read More
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -142,12 +144,12 @@ export default function FoundersSection(): JSX.Element {
           className="flex-1 relative z-10 w-full flex flex-col sm:flex-row gap-6 justify-center lg:justify-end"
         >
           <FounderCard
-            imageSrc="profile1.png"
+            imageSrc={rafiProfile}
             name="Rafi Asshiddiqie T."
             role1="Founder"
           />
           <FounderCard
-            imageSrc="profile2.png"
+            imageSrc={aidoProfile}
             name="Aido Nayaka"
             role1="Co-Founder"
             isHighlighted={true}
