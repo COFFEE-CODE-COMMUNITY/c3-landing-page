@@ -1,39 +1,56 @@
 import React from 'react';
 import { HeroSection } from './components/HeroSection';
-import { CallToAction } from './components/CallToAction';
+// import { CallToAction } from './components/CallToAction';
 import { ProjectSection } from './components/ProjectSection';
 import { ProjectCard } from './components/ProjectCard';
-import Navbar from '../../components/navbar';
-import Footer from '../../components/Footer';
-
-const imgRectangle95 = "http://localhost:3845/assets/40ba6e7cd70c4106790000e32af040a54d40d29b.png";
+import panggilaja from "../../assets/projects/panggilaja.png"
+import finansaku from "../../assets/projects/finansaku.png"
+import helthy from "../../assets/projects/heylth.png"
+import salingtau from "../../assets/projects/salingtau.png"
+import cthreeBot from "../../assets/projects/cthree-bot-1.png"
+import cakraBelajar from "../../assets/projects/cakra-belajar.png"
 
 const projects = {
     productInternal: [
         {
-            title: "Cakra Belajar",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
+            title: "Discord bot",
+            description: "Bot Discord pintar yang dirancang untuk membuat pengelolaan server jadi lebih mudah dan interaktif. Mulai dari otomatisasi hingga meningkatkan keterlibatan pengguna, semuanya hadir dalam satu solusi yang praktis.",
+            imageSrc: cthreeBot,
+        }
+    ],
+    internal: [
+                {
+            title: "Panggilaja",
+            description: "PanggilAja adalah solusi digital yang membuat keahlian Anda ditemukan, membangun reputasi, dan memberi Anda kendali penuh atas usaha Anda.",
+            imageSrc: panggilaja,
         },
+        {
+            title: "Helthy",
+            description: "Pantau pola hidupmu dengan Heylth, aplikasi yang membantu kamu menjaga kesehatan, mencatat aktivitas harian, dan memberikan rekomendasi gaya hidup yang lebih baik.",
+            imageSrc: helthy,
+        },
+        {
+            title: "Finansaku",
+            description: "Kelola uangmu hidup lebih terencana Dengan finansaku, budgeting jadi cepat dan praktis. Atur uangmu agar setiap rupiah digunakan dengan bijak.",
+            imageSrc: finansaku,
+        },
+        {
+            title: "Salingtau",
+            description: "Selamat datang di salingtau, ekosistem pembelajaran kolaboratif di mana setiap pertanyaan, jawaban, dan konten yang Anda bagikan akan dihargai.",
+            imageSrc: salingtau,
+        },
+        {
+            title: "Cakra Belajar",
+            description: "Platform pembelajaran berbasis AI yang membantu siswa memahami materi secara mendalam melalui pendekatan berpikir bertahap, mulai dari memahami hingga menciptakan.",
+            imageSrc: cakraBelajar,
+        }
+    ],
+    external: [
         {
             title: "Coming Soon",
             description: "",
             imageSrc: "",
             comingSoon: true,
-        }
-    ],
-    internal: [
-        {
-            title: "Cakra Belajar",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
-        }
-    ],
-    external: [
-        {
-            title: "Cakra Belajar",
-            description: "Lorem ipsum dolor sit amet consectetur. Facilisis risus quam habitasse cras suspendisse eleifend feugiat arcu nec. Et id id euismod id amet elit enim. Ornare faucibus vel ut nullam quis semper viverra pharetra. Mattis lectus a non dui blandit aliquam penatibus diam. Egestas id rhoncus id suspendisse aliquam facilisis amet senectus in.",
-            imageSrc: imgRectangle95,
         }
     ]
 };
@@ -45,7 +62,7 @@ const PortofolioPage = () => {
                 <HeroSection />
 
                 <div className="relative z-20">
-                    <CallToAction />
+                    {/* <CallToAction /> */}
                 </div>
 
                 <div className="w-full pt-16 pb-24 md:pb-40 mt-12 bg-white/30 backdrop-blur-sm">
