@@ -1,7 +1,3 @@
-import React from 'react';
-
-const imgGroup76 = "http://localhost:3845/assets/b2d939f3a4e53af3f1eaef691b0087d2488d1105.svg";
-
 export const HeroSection = () => {
   return (
     // Menghapus overflow-hidden dan bg-[#f8f8ff] agar lingkaran bisa overlap

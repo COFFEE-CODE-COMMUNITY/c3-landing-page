@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { RESEARCHS_LIST } from "../../../utils/data";
 import ResearchCard from "./ResearchCard";
-import { useScrollFadeInUp, useStaggerChildren, useFloating, useParallax } from "../../../utils/animations";
+import { useScrollFadeInUp, useStaggerChildren, useFloating } from "../../../utils/animations";
 import { gsap } from "gsap";
 
 interface ResearchDetail {

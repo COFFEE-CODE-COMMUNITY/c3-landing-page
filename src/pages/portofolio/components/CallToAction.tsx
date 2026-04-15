@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const CallToAction = () => {
     return (
         <section className="relative w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 z-20 -mt-32">

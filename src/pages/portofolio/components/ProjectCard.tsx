@@ -1,5 +1,3 @@
-import React from 'react';
-
 export interface ProjectCardProps {
     title: string;
     description: string;

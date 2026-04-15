@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///Users/rafitanujaya/workspace/Development/Side-Projects/cthree/landing-page/src/components/navbar.tsx"],"sourcesContent":["export default function Navbar() {\n    return (\n        <nav>\n            \n        </nav>\n    )\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACI,iQAAC;;;;;AAIT","debugId":null}},
+    {"offset": {"line": 30, "column": 0}, "map": {"version":3,"sources":["file:///Users/rafitanujaya/workspace/Development/Side-Projects/cthree/landing-page/src/app/page.tsx"],"sourcesContent":["import Navbar from \"@/components/navbar\";\n\nexport default function Home() {\n  return (\n    <>\n      <Navbar></Navbar>\n    </>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBACE;kBACE,cAAA,iQAAC,0JAAM;;;;;;AAGb","debugId":null}}]
+}

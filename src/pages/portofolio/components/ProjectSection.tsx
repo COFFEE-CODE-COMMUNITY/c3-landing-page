@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ProjectSectionProps {
     category: string;
     children: React.ReactNode;
