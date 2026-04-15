@@ -37,6 +37,18 @@ export default function Navbar(): JSX.Element {
     };
   }, []);
 
+  const isActive = (path: string) => {
+    if (path === "/") return location.pathname === "/";
+    return location.pathname.includes(path);
+  };
+
+  const linkClass = (path: string) =>
+    `font-urbanist text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors ${
+      isActive(path)
+        ? "text-[#00215e] font-medium"
+        : "text-[#858585] font-light"
+    }`;
+
   return (
     <div 
       ref={navbarRef}
@@ -59,28 +71,13 @@ export default function Navbar(): JSX.Element {
 
         {/* Navigation Links */}
         <nav className="flex items-center gap-6 md:gap-12 relative z-10">
-          <Link
-            to="/"
-            className={`font-urbanist text-[#00215e] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors ${
-              location.pathname === "/" ? "font-medium" : "font-light"
-            }`}
-          >
+          <Link to="/" className={linkClass("/")}>
             Home
           </Link>
-          <Link
-            to="/about"
-            className={`font-urbanist text-[#858585] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors ${
-              location.pathname.includes("/about") ? "font-medium" : "font-light"
-            }`}
-          >
+          <Link to="/about" className={linkClass("/about")}>
             About
           </Link>
-          <Link
-            to="/portofolio"
-            className={`font-urbanist text-[#858585] text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors ${
-              location.pathname.includes("/portofolio") ? "font-medium" : "font-light"
-            }`}
-          >
+          <Link to="/portofolio" className={linkClass("/portofolio")}>
             Portofolio
           </Link>
         </nav>

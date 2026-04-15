@@ -9,13 +9,13 @@ const collabs = [
     name: "Jessica Cecilia Budianto",
     image: jessica,
     role: "Google Developer Experts",
-    description: "A passionate software engineer who is driven by continuous learning and empowering others through technology. With a strong interest in web development and data science, Jessica actively shares her knowledge and mentors aspiring developers in their coding journey."
+    description: "A passionate software engineer focused on continuous learning and empowering others through technology."
   },
   {
     name: "Taufik Mulyawan",
     image: taufik,
     role: "Software Engineer",
-    description: "A Lead Software Engineer with over 4 years of experience in designing and scaling distributed backend systems. Experienced in building RESTful APIs and event-driven microservices on Google Cloud Platform, Taufik currently leads engineering efforts to deliver high-availability systems using modern cloud infrastructure and technologies like RabbitMQ and Redis."
+    description: "A Lead Software Engineer with over 4 years of experience in building and scaling reliable systems. Taufik currently leads engineering initiatives, focusing on delivering high-quality and impactful solutions."
   }
 ];
 
