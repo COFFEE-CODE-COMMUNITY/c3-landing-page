@@ -9,7 +9,7 @@ import hanna from "../assets/members/Hanna.webp"
 import ryan from "../assets/members/Ryan.webp"  
 import serena from "../assets/members/Serena.webp"
 import taufik from "../assets/members/Taufik.webp"
-import aido from "../assets/members/aido-1.webp"
+import aido from "../assets/members/aido.webp"
 import ulfi from "../assets/members/ulfi.webp"
 import rafi from "../assets/members/Rafi.webp"
 
