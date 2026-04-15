@@ -10,7 +10,7 @@ const AboutPage = (): JSX.Element => {
   const containerRef = useFadeIn(1.0, 0.1);
 
   return (
-    <div ref={containerRef} className="bg-[#F8F8FF] flex flex-col overflow-hidden\">
+    <div ref={containerRef} className="-mt-24 bg-[#F8F8FF] flex flex-col overflow-hidden">
       <HeroSection />
       <VisionMission />
       <Highlight />
