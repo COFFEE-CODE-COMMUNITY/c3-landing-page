@@ -5,12 +5,12 @@ import khansa from "../assets/members/khansa.webp";
 import maudi from "../assets/members/maudi.webp";
 import noProfile from "../assets/members/no-profile.webp";
 import fauzi from "../assets/members/Fauzi.webp"
-import hanna from "../assets/members/Hanna.webp"  
-import ryan from "../assets/members/Ryan.webp"  
+import hanna from "../assets/members/Hanna.webp"
+import ryan from "../assets/members/Ryan.webp"
 import serena from "../assets/members/Serena.webp"
 import taufik from "../assets/members/Taufik.webp"
 import aido from "../assets/members/aido.webp"
-import ulfi from "../assets/members/ulfi.webp"
+import ulfi from "../assets/members/Ulfi.webp"
 import rafi from "../assets/members/Rafi.webp"
 
 
@@ -111,7 +111,7 @@ export const TEAM_MEMBERS: Group[] = [
       {
         id: 6,
         name: "Muhammad Ryan Handhika S",
-        photoUrl: ryan ,
+        photoUrl: ryan,
       },
       {
         id: 7,

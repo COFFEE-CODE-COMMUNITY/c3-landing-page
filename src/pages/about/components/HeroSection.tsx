@@ -20,13 +20,13 @@ const HeroSection = (): JSX.Element => {
       gsap.fromTo(
         sectionRef.current,
         { opacity: 0 },
-        { opacity: 1, duration: 0.8, ease: "power2.out" }
+        { opacity: 1, duration: 0.8, ease: "poxswer2.out" }
       );
     }
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <div ref={sectionRef} className="relative w-full min-h-screen flex items-center justify-center overflow-hidden -my-25 py-30">
       {/* Decorative Background Circles */}
       <div
         ref={bgCircleLeft}
