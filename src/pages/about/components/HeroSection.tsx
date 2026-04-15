@@ -20,7 +20,7 @@ const HeroSection = (): JSX.Element => {
       gsap.fromTo(
         sectionRef.current,
         { opacity: 0 },
-        { opacity: 1, duration: 0.8, ease: "power2.out" }
+        { opacity: 1, duration: 0.8, ease: "poxswer2.out" }
       );
     }
   }, []);
@@ -38,7 +38,7 @@ const HeroSection = (): JSX.Element => {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-16 pb-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 w-full">
+      <div className="relative z-10 max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 w-full">
 
         {/* Left: Text Content */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-6">

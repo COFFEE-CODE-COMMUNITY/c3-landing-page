@@ -1,16 +1,21 @@
-import nico from "../assets/members/nico.png";
-import akbar from "../assets/members/akbar.png";
-import dwi from "../assets/members/dwi.png";
-import khansa from "../assets/members/khansa.png";
-import maudi from "../assets/members/maudi.png";
+import nico from "../assets/members/nico.webp";
+import akbar from "../assets/members/akbar.webp";
+import dwi from "../assets/members/dwi.webp";
+import khansa from "../assets/members/khansa.webp";
+import maudi from "../assets/members/maudi.webp";
+import noProfile from "../assets/members/no-profile.webp";
+import fauzi from "../assets/members/Fauzi.webp"
+import hanna from "../assets/members/Hanna.webp"
+import ryan from "../assets/members/Ryan.webp"
+import serena from "../assets/members/Serena.webp"
+import taufik from "../assets/members/Taufik.webp"
+import aido from "../assets/members/aido.webp"
+import ulfi from "../assets/members/Ulfi.webp"
+import rafi from "../assets/members/Rafi.webp"
+
 
 import AI from "../assets/researchs/AI.png";
-import Backend from "../assets/researchs/Backend.png";
 import Cyber from "../assets/researchs/CyberSecurity.png";
-import DataScience from "../assets/researchs/DataScience.png";
-import DevOps from "../assets/researchs/DevOps.png";
-import Mobiledev from "../assets/researchs/Mobiledev.png";
-import UI from "../assets/researchs/UI.png";
 import Webdev from "../assets/researchs/Webdev.png";
 import H1 from "../assets/highlights/1.jpg";
 import H2 from "../assets/highlights/2.jpg";
@@ -51,7 +56,7 @@ export const TEAM_MEMBERS: Group[] = [
       {
         id: 1,
         name: "Serena Luthfiana Wachyu",
-        photoUrl: akbar,
+        photoUrl: serena,
       },
       {
         id: 2,
@@ -66,7 +71,7 @@ export const TEAM_MEMBERS: Group[] = [
       {
         id: 4,
         name: "Urbania Rabih Zikri ",
-        photoUrl: maudi,
+        photoUrl: noProfile,
       },
       {
         id: 5,
@@ -81,42 +86,42 @@ export const TEAM_MEMBERS: Group[] = [
       {
         id: 1,
         name: "Aido Nayaka",
-        photoUrl: akbar,
+        photoUrl: aido,
       },
       {
         id: 2,
         name: "Muhammad Rifky Saputra",
-        photoUrl: dwi,
+        photoUrl: noProfile,
       },
       {
         id: 3,
         name: "Ulfiah Rohadatul Aisyi",
-        photoUrl: akbar,
+        photoUrl: ulfi,
       },
       {
         id: 4,
         name: "Adyarafa Almefty",
-        photoUrl: maudi,
+        photoUrl: noProfile,
       },
       {
         id: 5,
         name: "Muhammad Taufiqurrahman",
-        photoUrl: khansa,
+        photoUrl: taufik,
       },
       {
         id: 6,
         name: "Muhammad Ryan Handhika S",
-        photoUrl: khansa,
+        photoUrl: ryan,
       },
       {
         id: 7,
         name: "Muhammad Fauzi",
-        photoUrl: khansa,
+        photoUrl: fauzi,
       },
       {
         id: 8,
         name: "Hanna Hanifa Maulidina",
-        photoUrl: khansa,
+        photoUrl: hanna,
       },
     ],
   },
@@ -126,32 +131,32 @@ export const TEAM_MEMBERS: Group[] = [
       {
         id: 1,
         name: "Maudina Apriliani",
-        photoUrl: akbar,
+        photoUrl: maudi,
       },
       {
         id: 2,
         name: "Rifky Al Mukmin Rachmat",
-        photoUrl: dwi,
+        photoUrl: noProfile,
       },
       {
         id: 3,
         name: "Nico Aryawizeda",
-        photoUrl: akbar,
+        photoUrl: nico,
       },
       {
         id: 4,
         name: "Sauki Putra Raffita",
-        photoUrl: maudi,
+        photoUrl: noProfile,
       },
       {
         id: 5,
         name: "Farhan Nawwafal Pramudia",
-        photoUrl: khansa,
+        photoUrl: noProfile,
       },
       {
         id: 6,
         name: "Rafi Asshiddiqie Tanujaya",
-        photoUrl: khansa,
+        photoUrl: rafi,
       },
     ],
   },
