@@ -1,17 +1,14 @@
 import { FaInstagram, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { useScrollFadeInUp, useStaggerChildren } from '../utils/animations';
+
 
 export default function Footer() {
-  const footerRef = useScrollFadeInUp(0.8, 60);
-  const socialRef = useStaggerChildren(0.1, 0.6, 30);
-  const linksRef = useStaggerChildren(0.1, 0.6, 30);
+
 
   const currentYear = new Date().getFullYear();
 
   return (
     <footer
-      ref={footerRef}
       className="relative bg-[#00215e] w-full overflow-hidden text-[#f8f8ff]"
     >
       {/* Background Decorative Ellipse */}
@@ -50,7 +47,6 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div
-              ref={socialRef}
               className="flex items-center gap-5 mt-2"
             >
               {[
@@ -72,7 +68,7 @@ export default function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div ref={linksRef} className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 col-span-1 md:col-span-1 lg:col-span-2 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 col-span-1 md:col-span-1 lg:col-span-2 gap-8">
 
             {/* Project Links */}
             <div className="flex flex-col gap-4">

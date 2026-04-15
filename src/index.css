@@ -19,6 +19,12 @@
   --text-h7: 14px;
 }
 
+@layer base {
+  button {
+    cursor: pointer;
+  }
+}
+
 @layer utilities {
   .custom-text {
     @apply font-urbanist;
