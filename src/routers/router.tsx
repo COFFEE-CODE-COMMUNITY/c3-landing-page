@@ -3,6 +3,7 @@ import AppLayout from "../components/layouts/AppLayout";
 import App from "../pages/home";
 import AboutPage from "../pages/about";
 import PortofolioPage from "../pages/portofolio";
+import JoinPage from "../pages/join";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "portofolio",
         element: <PortofolioPage />,
+      },
+      {
+        path: "join-us",
+        element: <JoinPage />,
       },
     ],
   },
