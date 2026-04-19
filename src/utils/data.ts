@@ -14,9 +14,9 @@ import ulfi from "../assets/members/Ulfi.webp"
 import rafi from "../assets/members/Rafi.webp"
 
 
-import AI from "../assets/researchs/AI.png";
-import Cyber from "../assets/researchs/CyberSecurity.png";
-import Webdev from "../assets/researchs/Webdev.png";
+import AI from "../assets/researchs/AI.webp";
+import Webdev from "../assets/researchs/Webdev.webp";
+import Gamedev from "../assets/researchs/game-dev.webp";
 import H1 from "../assets/highlights/1.jpg";
 import H2 from "../assets/highlights/2.jpg";
 
@@ -169,7 +169,7 @@ export const RESEARCHS_LIST: Researchs[] = [
       "Menciptakan pengalaman interaktif melalui perpaduan mekanik permainan, narasi, dan teknologi grafis modern.",
     detail:
       "Bidang ini mengeksplorasi proses kreatif dan teknis dalam membangun dunia digital yang imersif. Mulai dari perancangan gameplay, pengembangan logika menggunakan game engine, hingga optimasi performa perangkat keras. Riset ini bertujuan untuk menghadirkan interaksi yang mulus dan visual yang menarik guna menciptakan pengalaman bermain yang berkesan bagi pengguna di berbagai platform.",
-    photourl: Cyber,
+    photourl: Gamedev,
   },
   {
     name: "AI & Data Science",
