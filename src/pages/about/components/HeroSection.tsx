@@ -73,7 +73,7 @@ const HeroSection = (): JSX.Element => {
         </div>
 
         {/* Right: Logo Circle */}
-        <div className="flex-shrink-0 relative">
+        <div className="flex-shrink-0 relative hidden md:block">
           <div
             ref={(el) => {
               if (el) {

@@ -13,25 +13,19 @@ export default function Navbar(): JSX.Element {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Initial fade in animation
     if (navbarRef.current) {
       gsap.fromTo(
         navbarRef.current,
         { opacity: 0 },
-        { opacity: 1, duration: 1, ease: 'power2.out' }
+        { opacity: 1, duration: 1, ease: "power2.out" },
       );
     }
 
-    // Setup scroll trigger for width shrink effect
     const scrollTrigger = ScrollTrigger.create({
       start: 100,
       end: 99999,
-      onEnter: () => {
-        setIsScrolled(true);
-      },
-      onLeaveBack: () => {
-        setIsScrolled(false);
-      },
+      onEnter: () => setIsScrolled(true),
+      onLeaveBack: () => setIsScrolled(false),
     });
 
     return () => {
@@ -62,10 +56,9 @@ export default function Navbar(): JSX.Element {
   };
 
   const linkClass = (path: string) =>
-    `font-urbanist text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors ${
-      isActive(path)
-        ? "text-[#00215e] font-medium"
-        : "text-[#858585] font-light"
+    `font-urbanist text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors ${isActive(path)
+      ? "text-[#00215e] font-medium"
+      : "text-[#858585] font-light"
     }`;
 
   const mobileLinkClass = (path: string) =>
@@ -86,14 +79,50 @@ export default function Navbar(): JSX.Element {
           isScrolled ? 'max-w-[1088px]' : 'max-w-screen-xl'
         }`}
       >
-        {/* Logo */}
-        <div className="flex items-center relative z-10">
-          <img
-            src="cthree-nav.svg"
-            alt="CThree Logo"
-            className="h-10 w-auto md:h-12"
-          />
+        <div
+          ref={navbarInnerRef}
+          className={`relative bg-white/80 backdrop-blur-2xl backdrop-saturate-150 border border-white/40 mx-auto rounded-[50px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] flex items-center justify-between px-6 py-3 md:px-10 pointer-events-auto transition-[max-width] duration-[400ms] ease-out ${isScrolled ? "max-w-[1088px]" : "max-w-screen-xl"
+            }`}
+        >
+          {/* Logo */}
+          <div className="flex items-center relative z-10">
+            <img src="cthree-nav.svg" alt="CThree Logo" className="h-10 w-auto md:h-12" />
+          </div>
+
+          {/* Desktop nav links */}
+          <nav className="hidden md:flex items-center gap-6 md:gap-12 relative z-10">
+            {navLinks.map((link) => (
+              <Link key={link.to} to={link.to} className={linkClass(link.to)}>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="hidden md:block">
+            <Link
+              to="/join-us"
+              className="bg-primary text-white font-semibold py-2 px-8 rounded-3xl hover:bg-dark-primary transition-colors duration-200"
+            >
+              Join Us
+            </Link>
+          </div>
+
+          {/* Mobile: hamburger */}
+          <button
+            id="mobile-menu-open"
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/8 transition-colors duration-200"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00215e" strokeWidth="2.2" strokeLinecap="round">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
         </div>
+      </div>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-6 md:gap-12 relative z-10">
