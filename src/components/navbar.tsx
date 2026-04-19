@@ -12,7 +12,6 @@ export default function Navbar(): JSX.Element {
   const navbarInnerRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  // Initial fade-in + scroll shrink
   useEffect(() => {
     if (navbarRef.current) {
       gsap.fromTo(
@@ -34,30 +33,16 @@ export default function Navbar(): JSX.Element {
     };
   }, []);
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
 
-  // Animate mobile full-screen menu open
   useEffect(() => {
     if (menuOpen && mobileMenuRef.current) {
       gsap.fromTo(
         mobileMenuRef.current,
         { opacity: 0, y: -8 },
         { opacity: 1, y: 0, duration: 0.28, ease: "power2.out" },
-      );
-    }
-  }, [menuOpen]);
-
-  // Animate mobile menu open/close
-  useEffect(() => {
-    if (!mobileMenuRef.current) return;
-    if (menuOpen) {
-      gsap.fromTo(
-        mobileMenuRef.current,
-        { opacity: 0, y: -10 },
-        { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
       );
     }
   }, [menuOpen]);
@@ -73,22 +58,21 @@ export default function Navbar(): JSX.Element {
     }`;
 
   const mobileLinkClass = (path: string) =>
-    `font-urbanist text-lg tracking-tight hover:text-c3-yellow transition-colors py-2 ${
-      isActive(path)
-        ? "text-[#00215e] font-medium"
-        : "text-[#858585] font-light"
+    `font-urbanist text-2xl font-semibold tracking-tight transition-colors py-2 ${
+      isActive(path) ? "text-primary" : "text-[#555]"
     }`;
 
+  const navLinks = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/portofolio", label: "Portofolio" },
+  ];
+
   return (
-    <div
-      ref={navbarRef}
-      className="fixed top-0 left-0 right-0 z-50 pointer-events-none pt-4 px-4 sm:px-6 lg:px-8"
-    >
+    <>
       <div
-        ref={navbarInnerRef}
-        className={`relative bg-white/10 backdrop-blur-2xl backdrop-saturate-150 border border-white/40 mx-auto rounded-[50px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] flex items-center justify-between px-6 py-3 md:px-10 pointer-events-auto transition-[max-width] duration-[400ms] ease-out ${
-          isScrolled ? 'max-w-[1088px]' : 'max-w-screen-xl'
-        }`}
+        ref={navbarRef}
+        className="fixed top-0 left-0 right-0 z-50 pointer-events-none pt-4 px-4 sm:px-6 lg:px-8"
       >
         <div
           ref={navbarInnerRef}
@@ -120,7 +104,7 @@ export default function Navbar(): JSX.Element {
             </Link>
           </div>
 
-          {/* Mobile: hamburger */}
+          {/* Mobile hamburger */}
           <button
             id="mobile-menu-open"
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/8 transition-colors duration-200"
@@ -136,66 +120,54 @@ export default function Navbar(): JSX.Element {
         </div>
       </div>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-6 md:gap-12 relative z-10">
-          <Link to="/" className={linkClass("/")}>
-            Home
-          </Link>
-          <Link to="/about" className={linkClass("/about")}>
-            About
-          </Link>
-          <Link to="/portofolio" className={linkClass("/portofolio")}>
-            Portofolio
-          </Link>
-        </nav>
-
-        {/* Hamburger Button (Mobile Only) */}
-        <button
-          onClick={() => setMenuOpen((prev) => !prev)}
-          className="md:hidden relative z-10 flex flex-col justify-center items-center w-9 h-9 gap-[5px] focus:outline-none pointer-events-auto"
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-        >
-          <span
-            className={`block w-6 h-[2px] bg-[#00215e] rounded-full transition-all duration-300 origin-center ${
-              menuOpen ? 'rotate-45 translate-y-[7px]' : ''
-            }`}
-          />
-          <span
-            className={`block w-6 h-[2px] bg-[#00215e] rounded-full transition-all duration-300 ${
-              menuOpen ? 'opacity-0 scale-x-0' : ''
-            }`}
-          />
-          <span
-            className={`block w-6 h-[2px] bg-[#00215e] rounded-full transition-all duration-300 origin-center ${
-              menuOpen ? '-rotate-45 -translate-y-[7px]' : ''
-            }`}
-          />
-        </button>
-      </div>
-
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile full-screen menu */}
       {menuOpen && (
         <div
           ref={mobileMenuRef}
-          className="md:hidden mx-auto mt-2 pointer-events-auto"
-          style={{ maxWidth: isScrolled ? '1088px' : undefined }}
+          className="fixed inset-0 z-[60] flex flex-col bg-white"
         >
-          <nav className="bg-white/80 backdrop-blur-2xl backdrop-saturate-150 border border-white/40 rounded-[24px] shadow-[0_8px_32px_rgba(0,0,0,0.08)] px-6 py-4 flex flex-col gap-1">
-            <Link to="/" className={mobileLinkClass("/")}>
-              Home
-            </Link>
-            <div className="h-px bg-gray-100/60" />
-            <Link to="/about" className={mobileLinkClass("/about")}>
-              About
-            </Link>
-            <div className="h-px bg-gray-100/60" />
-            <Link to="/portofolio" className={mobileLinkClass("/portofolio")}>
-              Portofolio
-            </Link>
+          {/* Top bar */}
+          <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-[#f0f0f0]">
+            <img src="cthree-nav.svg" alt="CThree Logo" className="h-10 w-auto" />
+            <button
+              id="mobile-menu-close"
+              className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/8 transition-colors duration-200"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00215e" strokeWidth="2.2" strokeLinecap="round">
+                <line x1="4" y1="4" x2="20" y2="20" />
+                <line x1="20" y1="4" x2="4" y2="20" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Nav links vertical */}
+          <nav className="flex flex-col px-8 pt-8 gap-1 flex-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={mobileLinkClass(link.to)}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
+
+          {/* Bottom CTA */}
+          <div className="px-8 pb-12">
+            <Link
+              to="/join-us"
+              onClick={() => setMenuOpen(false)}
+              className="block w-full text-center bg-primary text-white font-urbanist font-bold text-[16px] py-4 rounded-2xl hover:bg-dark-primary transition-colors duration-200 shadow-lg shadow-primary/25"
+            >
+              Join Us
+            </Link>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
