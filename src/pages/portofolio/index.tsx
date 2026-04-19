@@ -16,6 +16,7 @@ const projects = {
             title: "Discord bot",
             description: "Bot Discord pintar yang dirancang untuk membuat pengelolaan server jadi lebih mudah dan interaktif. Mulai dari otomatisasi hingga meningkatkan keterlibatan pengguna, semuanya hadir dalam satu solusi yang praktis.",
             imageSrc: cthreeBot,
+            visit: false
         }
     ],
     internal: [
