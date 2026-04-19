@@ -6,9 +6,10 @@ export interface ProjectCardProps {
     imageSrc: string;
     comingSoon?: boolean;
     visit?: boolean;
+    link?: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc, comingSoon, visit }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageSrc, comingSoon, visit, link }) => {
     if (comingSoon) {
         return (
             <div className="w-full h-[300px] md:h-[400px] bg-[#ececec] rounded-[25px] flex items-center justify-center shadow-sm">
@@ -29,9 +30,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, im
                     {description}
                 </p>
                 {visit !== false && (
-                    <button className="bg-primary text-white font-urbanist font-bold text-h5 rounded-full px-8 py-4 hover:bg-[#001a4b] transition-colors shadow-md">
+                    <a 
+                        href={link} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-block bg-primary text-white font-urbanist font-bold text-h5 rounded-full px-8 py-4 hover:bg-[#001a4b] transition-colors shadow-md text-center"
+                    >
                         Visit Website
-                    </button>
+                    </a>
                 )}
             </div>
             <div className="w-full lg:w-[687px] h-[300px] lg:h-[400px] rounded-[25px] overflow-hidden shadow-xl flex-shrink-0">
