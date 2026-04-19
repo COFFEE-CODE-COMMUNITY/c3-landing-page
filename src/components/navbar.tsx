@@ -12,6 +12,7 @@ export default function Navbar(): JSX.Element {
   const navbarInnerRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
+  // Initial fade-in + scroll shrink
   useEffect(() => {
     if (navbarRef.current) {
       gsap.fromTo(
@@ -36,7 +37,18 @@ export default function Navbar(): JSX.Element {
   // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
-  }, [location]);
+  }, [location.pathname]);
+
+  // Animate mobile full-screen menu open
+  useEffect(() => {
+    if (menuOpen && mobileMenuRef.current) {
+      gsap.fromTo(
+        mobileMenuRef.current,
+        { opacity: 0, y: -8 },
+        { opacity: 1, y: 0, duration: 0.28, ease: "power2.out" },
+      );
+    }
+  }, [menuOpen]);
 
   // Animate mobile menu open/close
   useEffect(() => {
@@ -56,9 +68,8 @@ export default function Navbar(): JSX.Element {
   };
 
   const linkClass = (path: string) =>
-    `font-urbanist text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors ${isActive(path)
-      ? "text-[#00215e] font-medium"
-      : "text-[#858585] font-light"
+    `font-urbanist text-base md:text-lg lg:text-xl tracking-tight hover:text-c3-yellow transition-colors ${
+      isActive(path) ? "text-[#00215e] font-medium" : "text-[#858585] font-light"
     }`;
 
   const mobileLinkClass = (path: string) =>
@@ -81,8 +92,9 @@ export default function Navbar(): JSX.Element {
       >
         <div
           ref={navbarInnerRef}
-          className={`relative bg-white/80 backdrop-blur-2xl backdrop-saturate-150 border border-white/40 mx-auto rounded-[50px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] flex items-center justify-between px-6 py-3 md:px-10 pointer-events-auto transition-[max-width] duration-[400ms] ease-out ${isScrolled ? "max-w-[1088px]" : "max-w-screen-xl"
-            }`}
+          className={`relative bg-white/80 backdrop-blur-2xl backdrop-saturate-150 border border-white/40 mx-auto rounded-[50px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] flex items-center justify-between px-6 py-3 md:px-10 pointer-events-auto transition-[max-width] duration-[400ms] ease-out ${
+            isScrolled ? "max-w-[1088px]" : "max-w-screen-xl"
+          }`}
         >
           {/* Logo */}
           <div className="flex items-center relative z-10">
