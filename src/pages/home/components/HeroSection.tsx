@@ -15,7 +15,7 @@ export default function HeroSection(): JSX.Element {
   return (
     <section
       id="home"
-      className="relative w-full h-screen pt-32 pb-16 lg:pt-48 lg:pb-24"
+      className="relative w-full h-screen flex items-center justify-center pt-24"
     >
       {/* Decorative Ellipses with Parallax and Floating */}
       <div 

@@ -16,6 +16,7 @@ const projects = {
             title: "Discord bot",
             description: "Bot Discord pintar yang dirancang untuk membuat pengelolaan server jadi lebih mudah dan interaktif. Mulai dari otomatisasi hingga meningkatkan keterlibatan pengguna, semuanya hadir dalam satu solusi yang praktis.",
             imageSrc: cthreeBot,
+            visit: false
         }
     ],
     internal: [
@@ -23,16 +24,19 @@ const projects = {
             title: "Panggilaja",
             description: "PanggilAja adalah solusi digital yang membuat keahlian Anda ditemukan, membangun reputasi, dan memberi Anda kendali penuh atas usaha Anda.",
             imageSrc: panggilaja,
+            link : "https://www.panggilaja.space"
         },
         {
             title: "Helthy",
             description: "Pantau pola hidupmu dengan Heylth, aplikasi yang membantu kamu menjaga kesehatan, mencatat aktivitas harian, dan memberikan rekomendasi gaya hidup yang lebih baik.",
             imageSrc: helthy,
+            link : "https://www.heylth.space/"
         },
         {
             title: "Finansaku",
             description: "Kelola uangmu hidup lebih terencana Dengan finansaku, budgeting jadi cepat dan praktis. Atur uangmu agar setiap rupiah digunakan dengan bijak.",
             imageSrc: finansaku,
+            link : "https://www.finansaku.space/"
         },
         {
             title: "Salingtau",

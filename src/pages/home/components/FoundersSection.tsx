@@ -57,7 +57,7 @@ function FounderCard({
             }
           : undefined
       }
-      className={`flex flex-col border border-white/50 backdrop-blur-2xl backdrop-saturate-150 rounded-[25px] p-6 md:p-8 items-center w-full max-w-[320px] mx-auto shadow-[0_8px_32px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out group ${
+      className={`flex flex-col border border-white/50 backdrop-blur-2xl backdrop-saturate-150 rounded-[25px] p-6 md:p-8 items-center w-full max-w-[320px] mx-auto shadow-[0_8px_15px_rgba(0,0,0,0.10)] transition-all duration-300 ease-out group ${
         isHovered ? 'shadow-[0_12px_40px_rgba(0,33,94,0.08)]' : ''
       } ${
         isHighlighted ? "lg:-translate-y-4" : ""
