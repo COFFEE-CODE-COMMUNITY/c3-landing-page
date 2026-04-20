@@ -1,5 +1,5 @@
 import type { JSX } from "react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import workshop from "../../../assets/event/workshop.webp";
 import engagement from "../../../assets/event/engagement.webp";
 import showcase from "../../../assets/event/showcase.webp";
@@ -10,58 +10,97 @@ interface EventCardProps {
   imageSrc: string;
   title: string;
   description: string;
-  borderClass: string;
+  accentClass: string;
 }
 
 function EventCard({
   imageSrc,
   title,
   description,
-  borderClass,
+  accentClass,
 }: EventCardProps): JSX.Element {
-  const imageRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isTapped, setIsTapped] = useState(false);
 
   useEffect(() => {
-    if (!imageRef.current) return;
+    if (!cardRef.current) return;
 
     gsap.fromTo(
-      imageRef.current,
-      { scale: 0.95, opacity: 0.8 },
+      cardRef.current,
+      { scale: 0.95, opacity: 0 },
       {
-        scale: 1.05,
+        scale: 1,
         opacity: 1,
-        duration: 0.8,
-        ease: 'power2.out',
+        duration: 0.7,
+        ease: "power2.out",
         scrollTrigger: {
-          trigger: imageRef.current,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
+          trigger: cardRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
         },
       }
     );
   }, []);
 
+  const handleClick = () => {
+    // Only toggle on touch devices (mobile), desktop uses CSS hover
+    if (window.matchMedia("(hover: none)").matches) {
+      setIsTapped((prev) => !prev);
+    }
+  };
+
   return (
-    <div className="flex flex-col bg-white shadow-md rounded-[25px] overflow-hidden h-full">
-      <div className="p-4 sm:p-6 lg:p-8 flex-1 flex flex-col items-center text-center">
-        <div 
-          ref={imageRef}
-          className="w-full aspect-[4/3] rounded-lg overflow-hidden mb-6 bg-gray-100"
-        >
-          <img
-            src={imageSrc}
-            alt={title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h3 className="font-urbanist font-bold text-primary text-h4 md:text-h3 lg:text-h3 text-left leading-tight tracking-tight mb-4">
+    <div
+      ref={cardRef}
+      onClick={handleClick}
+      className="group relative w-full aspect-[3/4] rounded-[25px] overflow-hidden shadow-lg cursor-pointer select-none"
+    >
+      {/* Background Image */}
+      <img
+        src={imageSrc}
+        alt={title}
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 ${
+          isTapped ? "scale-110" : ""
+        }`}
+      />
+
+      {/* Default overlay: dark gradient at bottom */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent transition-opacity duration-400 group-hover:opacity-0 ${
+          isTapped ? "opacity-0" : "opacity-100"
+        }`}
+      />
+
+      {/* Default state: title at bottom */}
+      <div
+        className={`absolute bottom-0 left-0 right-0 p-6 transition-opacity duration-300 group-hover:opacity-0 ${
+          isTapped ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        <div className={`w-10 h-1 ${accentClass} rounded-full mb-3`}></div>
+        <h3 className="font-urbanist font-bold text-white text-h4 md:text-h3 leading-tight tracking-tight">
           {title}
         </h3>
-        <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight">
+      </div>
+
+      {/* Hover/tap overlay: full dark overlay + centered content */}
+      <div
+        className={`absolute inset-0 bg-black/75 transition-opacity duration-400 flex flex-col items-center justify-center p-8 text-center group-hover:opacity-100 ${
+          isTapped ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className={`w-10 h-1 ${accentClass} rounded-full mb-4`}></div>
+        <h3 className="font-urbanist font-bold text-white text-h4 md:text-h3 leading-tight tracking-tight mb-4">
+          {title}
+        </h3>
+        <p className="font-urbanist font-normal text-white/80 text-h6 md:text-h5 leading-relaxed tracking-tight">
           {description}
         </p>
+        {/* Tap hint — only visible on touch devices */}
+        <p className="mt-4 text-white/40 text-xs font-urbanist md:hidden">
+          Tap lagi untuk menutup
+        </p>
       </div>
-      <div className={`w-full h-1.5 ${borderClass}`}></div>
     </div>
   );
 }
@@ -73,52 +112,52 @@ export default function EventsSection(): JSX.Element {
 
   return (
     <section className="relative w-full py-16 md:py-24 bg-[#f8f8ff] px-4 sm:px-6 lg:px-8">
-      
-      {/* Decorative Orange Circle (Bottom Left, overlapping to RoutineSection) */}
-      <div 
+
+      {/* Decorative Orange Circle */}
+      <div
         ref={orangeCircleRef}
         className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] rounded-full bg-orange pointer-events-none z-0"
       ></div>
 
-      {/* Main Content Container (z-10 ensures it stays above the circle) */}
-      <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-center">
-        
-        {/* Left Text */}
-        <div 
+      {/* Main Content Container */}
+      <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col gap-12 lg:gap-16">
+
+        {/* Top Text Section */}
+        <div
           ref={textContentRef}
-          className="flex flex-col lg:flex-[0.35] w-full text-center lg:text-left items-center lg:items-start"
+          className="flex flex-col w-full text-center lg:text-left items-center lg:items-start max-w-2xl"
         >
           <h2 className="font-urbanist font-bold text-primary text-h3 md:text-h2 lg:text-h1 tracking-tight mb-6 md:mb-8">
             CThree Event
           </h2>
           <div className="w-32 h-1.5 bg-orange rounded-full mb-6 md:mb-8"></div>
-          <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight max-w-2xl lg:max-w-none">
+          <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight">
             Kami menghadirkan berbagai kegiatan yang dirancang untuk mendukung proses belajar dan pengembangan skill di bidang teknologi. Setiap event memberikan pengalaman baru melalui praktik langsung, kolaborasi, dan eksplorasi ide.
           </p>
         </div>
 
-        {/* Right Cards */}
-        <div 
+        {/* Full-width Cards Grid */}
+        <div
           ref={cardsRef}
-          className="flex-[0.65] w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <EventCard
             imageSrc={workshop}
             title="Workshop"
             description="Workshop adalah kegiatan komunitas kami untuk belajar bareng secara praktikal."
-            borderClass="bg-primary"
+            accentClass="bg-primary"
           />
           <EventCard
             imageSrc={engagement}
-            title="Engangement Day"
+            title="Engagement Day"
             description="Workshop adalah kegiatan rutin komunitas kami untuk belajar bareng secara praktikal."
-            borderClass="bg-orange"
+            accentClass="bg-orange"
           />
           <EventCard
             imageSrc={showcase}
             title="Showcase Day"
             description="Showcase Day adalah momen untuk kami menunjukkan sejauh mana perkembangan proyek yang sedang dikerjakan."
-            borderClass="bg-yellow"
+            accentClass="bg-yellow"
           />
         </div>
       </div>

@@ -116,7 +116,6 @@ export default function RoutineSection(): JSX.Element {
           <div className="w-32 h-1.5 bg-orange rounded-full mb-6 md:mb-8"></div>
 
           {/* Top orange line decorator for mobile/tablet */}
-          <div className="block lg:hidden w-32 h-1.5 bg-orange rounded-full mb-6 md:mb-8"></div>
           <p className="font-urbanist font-normal text-[#858585] text-h6 md:text-h5 leading-relaxed tracking-tight max-w-2xl lg:max-w-none">
             Kami memiliki kebiasaan belajar yang konsisten, terarah, dan berkelanjutan. Dengan pendekatan yang menggabungkan pembelajaran mandiri, praktik berbasis proyek, serta kolaborasi aktif, kami membantu peserta mengembangkan keterampilan nyata yang siap diterapkan di dunia kerja. Setiap proses difokuskan pada peningkatan kompetensi secara bertahap dan terukur.
           </p>

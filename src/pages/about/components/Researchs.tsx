@@ -37,8 +37,8 @@ const Researchs = () => {
     <>
       <section className="relative w-full py-24 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Decorative circles */}
-        <div ref={circleLeft} className="absolute -left-16 top-20 w-48 h-48 lg:w-72 lg:h-72 rounded-full bg-primary pointer-events-none" />
-        <div ref={circleRight} className="absolute -right-12 bottom-20 w-40 h-40 lg:w-60 lg:h-60 rounded-full bg-orange pointer-events-none" />
+        <div ref={circleLeft} className="hidden md:block absolute -left-16 top-20 w-48 h-48 lg:w-72 lg:h-72 rounded-full bg-primary pointer-events-none" />
+        <div ref={circleRight} className="hidden md:block absolute -right-12 bottom-20 w-40 h-40 lg:w-60 lg:h-60 rounded-full bg-orange pointer-events-none" />
 
         <div className="max-w-screen-xl mx-auto relative z-10">
           {/* Heading */}

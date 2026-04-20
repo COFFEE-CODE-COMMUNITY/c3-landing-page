@@ -62,11 +62,11 @@ const Members = () => {
 
         {/* Group Tabs */}
         <div className="flex justify-center mb-14">
-          <div className="inline-flex gap-2 bg-white/60 backdrop-blur-sm border border-white/50 rounded-full p-1.5 shadow-sm">
+          <div className="flex flex-wrap justify-center gap-2 bg-white/60 backdrop-blur-sm border border-white/50 rounded-2xl p-1.5 shadow-sm max-w-full">
             {GROUPS.map((group) => (
               <button
                 key={group}
-                className={`font-urbanist font-semibold text-h7 md:text-h6 px-5 md:px-7 py-2.5 rounded-full transition-all duration-300 cursor-pointer whitespace-nowrap ${
+                className={`font-urbanist font-semibold text-h7 md:text-h6 px-5 md:px-7 py-2.5 rounded-xl transition-all duration-300 cursor-pointer ${
                   groupName === group
                     ? "bg-primary text-white shadow-md shadow-primary/20"
                     : "text-[#888] hover:text-primary"

@@ -25,7 +25,7 @@ export default function HeroSection(): JSX.Element {
             leftCircleFloatRef.current = el;
           }
         }}
-        className="absolute left-[-20vw] top-10 w-[40vw] max-w-[500px] aspect-square rounded-full bg-primary pointer-events-none z-0" 
+        className="hidden md:block absolute left-[-20vw] top-10 w-[40vw] max-w-[500px] aspect-square rounded-full bg-primary pointer-events-none z-0" 
       />
       <div 
         ref={(el) => {
@@ -34,7 +34,7 @@ export default function HeroSection(): JSX.Element {
             rightCircleFloatRef.current = el;
           }
         }}
-        className="absolute right-[-20vw] top-100 w-[40vw] max-w-[500px] aspect-square rounded-full bg-orange pointer-events-none z-0" 
+        className="hidden md:block absolute right-[-20vw] top-100 w-[40vw] max-w-[500px] aspect-square rounded-full bg-orange pointer-events-none z-0" 
       />
 
       {/* Main Content */}
